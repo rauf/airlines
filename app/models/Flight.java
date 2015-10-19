@@ -10,6 +10,7 @@ import com.avaje.ebean.Model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import java.util.List;
 
 
@@ -19,7 +20,13 @@ public class Flight extends Model{
     @Id
     public Long id;
 
-    @ManyToMany(mappedBy = "flight")
+    @ManyToMany(mappedBy = "flights")
     public List<User> user;
+
+    @ManyToMany
+    public List<Airplane> airplanes;
+
+    @ManyToOne
+    Route route;
 
 }
