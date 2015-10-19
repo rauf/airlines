@@ -33,4 +33,7 @@ public class Complaint extends Model{
 
     public static Finder<Long,Complaint> find = new Finder<>(Complaint.class);
 
+    public Complaint(){
+        // left blank
+    }
 }

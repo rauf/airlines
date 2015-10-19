@@ -24,4 +24,9 @@ public class Fare extends Model {
 
 
     public static Finder<Long,Fare> find = new Finder<>(Fare.class);
+
+    public Fare(){
+        // left blank
+    }
 }
+

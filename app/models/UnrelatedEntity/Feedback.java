@@ -30,7 +30,9 @@ public class Feedback extends Model {
     public String rating; //rating out of 10
 
 
+    public static Finder<Long,Feedback> find = new Finder<>(Feedback.class);
 
-
-
+    public Feedback(){
+        // left blank
+    }
 }

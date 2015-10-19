@@ -32,4 +32,7 @@ public class Flight extends Model{
 
     public static Finder<Long,Flight> find = new Finder<>(Flight.class);
 
+    public Flight(){
+        // left blank
+    }
 }

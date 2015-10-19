@@ -29,4 +29,8 @@ public class SecurityQuestion extends Model{
 
 
     public static Finder<Long,SecurityQuestion> find = new Finder<>(SecurityQuestion.class);
+
+    public SecurityQuestion(){
+        // left blank
+    }
 }

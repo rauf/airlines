@@ -24,4 +24,8 @@ public class Airport extends Model {
 
 
     public static Finder<Long,Airport> find = new Finder<>(Airport.class);
+
+    public Airport(){
+        // left blank
+    }
 }

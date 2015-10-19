@@ -24,4 +24,8 @@ public class Transaction extends Model {
 
     public static Finder<Long,Transaction> find = new Finder<>(Transaction.class);
 
+    public Transaction(){
+        // left blank
+    }
+
 }

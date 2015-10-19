@@ -20,4 +20,8 @@ public class Passenger extends Model{
 
 
     public static Finder<Long,Passenger> find = new Finder<>(Passenger.class);
+
+    public Passenger(){
+        // left blank
+    }
 }

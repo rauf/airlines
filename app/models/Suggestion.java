@@ -27,4 +27,7 @@ public class Suggestion extends Model{
 
     public static Finder<Long,Suggestion> find = new Finder<>(Suggestion.class);
 
+    public Suggestion(){
+        // left blank
+    }
 }

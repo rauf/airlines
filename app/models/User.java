@@ -21,6 +21,7 @@ public class User extends Model {
     @Constraints.Required
     public String name;
 
+    @Constraints.MinLength(6)
     @Constraints.Required
     public String password;
 
@@ -58,4 +59,9 @@ public class User extends Model {
     public List<Complaint> complaints;
 
     public static Finder<Long,User> find = new Finder<>(User.class);
+
+    public User(){
+        // left blank
+    }
+
 }

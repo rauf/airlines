@@ -29,4 +29,8 @@ public class Route extends Model {
 
 
     public static Finder<Long,Route> find = new Finder<>(Route.class);
+
+    public Route(){
+        // left blank
+    }
 }
