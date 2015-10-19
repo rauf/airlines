@@ -30,4 +30,7 @@ public class Complaint extends Model{
     @ManyToOne
     public User user;
 
+
+    public static Finder<Long,Complaint> find = new Finder<>(Complaint.class);
+
 }

@@ -21,4 +21,7 @@ public class Fare extends Model {
 
     @OneToMany(mappedBy = "fare")
     public List<Route> routes;
+
+
+    public static Finder<Long,Fare> find = new Finder<>(Fare.class);
 }

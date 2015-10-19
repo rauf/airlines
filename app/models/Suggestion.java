@@ -25,5 +25,6 @@ public class Suggestion extends Model{
     public String date;
 
 
+    public static Finder<Long,Suggestion> find = new Finder<>(Suggestion.class);
 
 }

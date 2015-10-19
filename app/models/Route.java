@@ -27,4 +27,6 @@ public class Route extends Model {
     public List<Flight> flights;
 
 
+
+    public static Finder<Long,Route> find = new Finder<>(Route.class);
 }

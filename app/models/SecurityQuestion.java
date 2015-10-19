@@ -26,4 +26,7 @@ public class SecurityQuestion extends Model{
     @OneToMany(mappedBy = "securityQuestion")
     List<User> users;
 
+
+
+    public static Finder<Long,SecurityQuestion> find = new Finder<>(SecurityQuestion.class);
 }

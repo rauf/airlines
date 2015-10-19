@@ -28,4 +28,8 @@ public class Flight extends Model{
     @ManyToOne
     public Route route;
 
+
+
+    public static Finder<Long,Flight> find = new Finder<>(Flight.class);
+
 }

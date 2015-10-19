@@ -18,4 +18,6 @@ public class Passenger extends Model{
 
     //relationship with Transaction left
 
+
+    public static Finder<Long,Passenger> find = new Finder<>(Passenger.class);
 }

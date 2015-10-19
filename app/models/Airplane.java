@@ -15,14 +15,14 @@ import java.util.List;
 @Entity
 public class Airplane extends Model {
 
+   
+    @Id
+    public Long id;
 
- @Id
- public Long id;
-
- @ManyToMany(mappedBy = "airplanes")
- public List<Flight> flights;
+    @ManyToMany(mappedBy = "airplanes")
+    public List<Flight> flights;
 
 
-
+    public static Finder<Long,Airplane> find = new Finder<>(Airplane.class);
 
 }
