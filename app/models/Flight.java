@@ -1,6 +1,5 @@
 package models;
 
-
 /**
  * Created by abdul on 10/19/15.
  */
@@ -27,6 +26,6 @@ public class Flight extends Model{
     public List<Airplane> airplanes;
 
     @ManyToOne
-    Route route;
+    public Route route;
 
 }

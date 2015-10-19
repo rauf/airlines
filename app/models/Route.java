@@ -21,12 +21,10 @@ public class Route extends Model {
     public Airport airport;
 
     @ManyToOne
-    Fare fare;
+    public Fare fare;
 
     @OneToMany(mappedBy = "route")
     public List<Flight> flights;
-
-
 
 
 }

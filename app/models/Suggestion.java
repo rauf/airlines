@@ -9,12 +9,9 @@ import play.data.validation.Constraints;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import java.util.List;
-
 
 @Entity
-public class Complaint extends Model{
+public class Suggestion extends Model{
 
     @Id
     public Long id;
@@ -27,7 +24,6 @@ public class Complaint extends Model{
     @Constraints.Required
     public String date;
 
-    @ManyToOne
-    public User user;
+
 
 }

@@ -1,11 +1,11 @@
 package models;
 
-
 /**
  * Created by abdul on 10/19/15.
  */
 
 import com.avaje.ebean.Model;
+import play.api.data.validation.Constraint;
 import play.data.validation.Constraints;
 
 import javax.persistence.*;
@@ -23,12 +23,15 @@ public class User extends Model {
     public String name;
 
     @Constraints.Required
+    public String password;
+
+    @Constraints.Required
     public String gender;
 
     public String address;
 
     @Constraints.Required
-    public String contactNo;    //should be multivalued
+    public String contactNo;    // multivalued
 
     @Constraints.Required
     @Constraints.Email
@@ -36,6 +39,9 @@ public class User extends Model {
 
     @Constraints.Required
     public String dateOfBirth;
+
+    @Constraints.Required
+    public String securityAnswer;
 
     //derived from DOB
     public int age;

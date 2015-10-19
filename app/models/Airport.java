@@ -15,7 +15,6 @@ import javax.persistence.OneToOne;
 @Entity
 public class Airport extends Model {
 
-
     @Id
     public Long id;
 

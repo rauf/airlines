@@ -20,5 +20,5 @@ public class Fare extends Model {
     public Long id;
 
     @OneToMany(mappedBy = "fare")
-    public List<Route> routeList;
+    public List<Route> routes;
 }
