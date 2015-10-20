@@ -5,6 +5,8 @@ package models;
  */
 
 import com.avaje.ebean.Model;
+import com.avaje.ebean.text.StringFormatter;
+import play.data.validation.Constraints;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -31,6 +33,29 @@ public class Flight extends Model{
 
 
     public static Finder<Long,Flight> find = new Finder<>(Flight.class);
+
+
+    /*****************************ATTRIBUTES***************************/
+    @Constraints.Required
+    public String flight_no; //mix of alphabet and number
+
+    @Constraints.Required
+    public String arrival_time;
+
+    @Constraints.Required
+    public String arrival_date;
+
+    @Constraints.Required
+    public String dest_time;
+
+    @Constraints.Required
+    public String dest_date;
+
+    public String travel_time; //derived attribute
+
+
+
+
 
     public Flight(){
         // left blank
