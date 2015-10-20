@@ -44,10 +44,6 @@ public class Airport extends Model {
 
 
 
-
-
-
-
     public Airport(){
         // left blank
     }
