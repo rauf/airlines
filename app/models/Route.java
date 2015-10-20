@@ -5,6 +5,7 @@ package models;
  */
 
 import com.avaje.ebean.Model;
+import play.data.validation.Constraints;
 
 import javax.persistence.*;
 import java.util.List;
@@ -29,6 +30,20 @@ public class Route extends Model {
 
 
     public static Finder<Long,Route> find = new Finder<>(Route.class);
+
+
+
+    /**************************************ATTRIBUTE****************************************/
+@Constraints.Required
+    public String source;
+
+    @Constraints.Required
+    public String destination;
+
+    //optional
+    public String intermediate; // multi_valued
+
+
 
     public Route(){
         // left blank
