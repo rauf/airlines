@@ -5,11 +5,14 @@ package models;
  */
 
 import com.avaje.ebean.Model;
+import play.data.format.Formats;
+import play.data.validation.Constraints;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import java.util.Date;
 import java.util.List;
 
 
@@ -19,6 +22,18 @@ public class Flight extends Model{
     @Id
     public Long id;
 
+    @Constraints.Required
+    @Formats.DateTime(pattern = "DD-MM-YYYY")
+    public Date date;           //stores date and time
+
+    @Constraints.Required
+    @Formats.DateTime(pattern = "HH:mm:ss")
+    public Date arrivalTime;
+
+    @Constraints.Required
+    @Formats.DateTime(pattern = "HH:mm:ss")
+    public Date departureTime;
+
     @ManyToMany(mappedBy = "flights")
     public List<User> user;
 
@@ -27,8 +42,6 @@ public class Flight extends Model{
 
     @ManyToOne
     public Route route;
-
-
 
     public static Finder<Long,Flight> find = new Finder<>(Flight.class);
 

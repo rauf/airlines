@@ -5,9 +5,11 @@ package models;
  */
 
 import com.avaje.ebean.Model;
+import play.data.format.Formats;
 import play.data.validation.Constraints;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -38,7 +40,8 @@ public class User extends Model {
     public String email;
 
     @Constraints.Required
-    public String dateOfBirth;
+    @Formats.DateTime(pattern = "mm-MM-yyyy")
+    public Date dateOfBirth;
 
     @Constraints.Required
     public String securityAnswer;

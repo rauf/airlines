@@ -21,8 +21,6 @@ public class Airport extends Model {
     @OneToOne(mappedBy = "airport")
     public Route route;
 
-
-
     public static Finder<Long,Airport> find = new Finder<>(Airport.class);
 
     public Airport(){
