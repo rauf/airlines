@@ -4,8 +4,11 @@ package models;
  * Created by abdul on 10/19/15.
  */
 
+
 import com.avaje.ebean.Model;
+import com.avaje.ebean.PagedList;
 import play.data.validation.Constraints;
+import scala.collection.immutable.Page;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -31,17 +34,26 @@ public class Complaint extends Model{
     public User user;
 
 
+
+
     public static Finder<Long,Complaint> find = new Finder<>(Complaint.class);
 
     public Complaint(){
         // left blank
     }
 
-    public static List<Complaint> findPage(int page,int size) {
+    public static PagedList<Complaint> findPage(int page,int size) {
         return find.where()
                 .orderBy("id asc")
-                .findPagedList(page,size)
-                .getList();
+                .findPagedList(page,size);
+
     }
+
+
+
+
+
+
+
 
 }
