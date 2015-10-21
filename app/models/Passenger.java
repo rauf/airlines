@@ -39,4 +39,12 @@ public class Passenger extends Model{
     public Passenger(){
         // left blank
     }
+
+    public static List<Passenger> findPage(int page,int size) {
+        return find.where()
+                .orderBy("id asc")
+                .findPagedList(page,size)
+                .getList();
+    }
+
 }

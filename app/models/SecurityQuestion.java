@@ -27,10 +27,17 @@ public class SecurityQuestion extends Model{
     List<User> users;
 
 
-
     public static Finder<Long,SecurityQuestion> find = new Finder<>(SecurityQuestion.class);
 
     public SecurityQuestion(){
         // left blank
     }
+
+    public static List<SecurityQuestion> findPage(int page,int size) {
+        return find.where()
+                .orderBy("id asc")
+                .findPagedList(page,size)
+                .getList();
+    }
+
 }

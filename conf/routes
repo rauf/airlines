@@ -3,7 +3,107 @@
 # ~~~~
 
 # Home page
-GET     /                           @controllers.Application.index()
+GET           /                             @controllers.Application.index()
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               @controllers.Assets.versioned(path="/public", file: Asset)
+GET           /assets/*file                 @controllers.Assets.versioned(path="/public", file: Asset)
+
+
+
+GET           /admins/new                   @controllers.Admins.newAdmin()
+
+GET           /admins/                      @controllers.Admins.list(page: Int ?=0)
+
+GET           /admins/:id                   @controllers.Admins.details(id: Int)
+
+POST          /admins/                      @controllers.Admins.save()
+
+DELETE        /admins/:id                   @controllers.Admins.delete(id : Int)
+
+
+
+GET           /complaints/new               @controllers.Complaints.newComplaint()
+
+GET           /complaints/                  @controllers.Complaints.list(page: Int ?=0)
+
+GET           /complaints/:id               @controllers.Complaints.details(id: Int)
+
+POST          /complaints/                  @controllers.Complaints.save()
+
+DELETE        /complaints/:id               @controllers.Complaints.delete(id : Int)
+
+
+
+GET           /feedbacks/new                @controllers.Feedbacks.newFeedback()
+
+GET           /feedbacks/                   @controllers.Feedbacks.list(page: Int ?=0)
+
+GET           /feedbacks/:id                @controllers.Feedbacks.details(id: Int)
+
+POST          /feedbacks/                   @controllers.Feedbacks.save()
+
+DELETE        /feedbacks/:id                @controllers.Feedbacks.delete(id : Int)
+
+
+
+GET           /passengers/new               @controllers.Passengers.newPassenger()
+
+GET           /passengers/                  @controllers.Passengers.list(page: Int ?=0)
+
+GET           /passengers/:id               @controllers.Passengers.details(id: Int)
+
+POST          /passengers/                  @controllers.Passengers.save()
+
+DELETE        /passengers/:id               @controllers.Passengers.delete(id : Int)
+
+
+
+GET           /securityquestions/new        @controllers.SecuityQuestions.newQuestion()
+
+GET           /securityquestions/           @controllers.SecuityQuestions.list(page: Int ?=0)
+
+GET           /securityquestions/:id        @controllers.SecuityQuestions.details(id: Int)
+
+POST          /securityquestions/           @controllers.SecuityQuestions.save()
+
+DELETE        /securityquestions/:id        @controllers.SecuityQuestions.delete(id : Int)
+
+
+
+GET           /suggestions/new              @controllers.Suggestions.newSuggestion()
+
+GET           /suggestions/                 @controllers.Suggestions.list(page: Int ?=0)
+
+GET           /suggestions/:id              @controllers.Suggestions.details(id: Int)
+
+POST          /suggestions/                 @controllers.Suggestions.save()
+
+DELETE        /suggestions/:id              @controllers.Suggestions.delete(id : Int)
+
+
+
+GET           /transactions/new             @controllers.Transactions.newTransaction()
+
+GET           /transactions/                @controllers.Transactions.list(page: Int ?=0)
+
+GET           /transactions/:id             @controllers.Transactions.details(id: Int)
+
+POST          /transactions/                @controllers.Transactions.save()
+
+DELETE        /transactions/:id             @controllers.Transactions.delete(id : Int)
+
+
+
+GET           /users/new                    @controllers.Users.newUser()
+
+GET           /users/                       @controllers.Users.list(page: Int ?=0)
+
+GET           /users/:id                    @controllers.Users.details(id: Int)
+
+POST          /users/                       @controllers.Users.save()
+
+DELETE        /users/:id                    @controllers.Users.delete(id : Int)
+
+
+
+

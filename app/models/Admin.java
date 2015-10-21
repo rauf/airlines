@@ -1,19 +1,22 @@
 package models;
 
 /**
- * Created by abdul on 10/19/15.
+ * Created by abdul on 10/21/15.
  */
 
 import com.avaje.ebean.Model;
+import play.api.mvc.Result;
 import play.data.format.Formats;
 import play.data.validation.Constraints;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import java.util.Date;
 import java.util.List;
 
 @Entity
-public class User extends Model {
+public class Admin extends Model{
 
     @Id
     public Long id;
@@ -52,24 +55,15 @@ public class User extends Model {
     @ManyToOne
     public SecurityQuestion securityQuestion;
 
-    @ManyToMany
-    public List<Flight> flights;
 
-    @OneToMany(mappedBy = "user")
-    public List<Transaction> transactions;
+    public static Finder<Long,Admin> find = new Finder<>(Admin.class);
 
-    @OneToMany(mappedBy = "user")
-    public List<Complaint> complaints;
-
-    public static Finder<Long,User> find = new Finder<>(User.class);
-
-    public User(){
-        // left blank
+    public Admin() {
+        //left blank
     }
 
-    //For Paging
-    public static List<User> findPage(int page,int size) {
-        return find.where()
+    public static List<Admin> findPage(int page,int size) {
+        return   find.where()
                 .orderBy("id asc")
                 .findPagedList(page,size)
                 .getList();

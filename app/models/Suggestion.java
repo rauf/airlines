@@ -9,6 +9,7 @@ import play.data.validation.Constraints;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.util.List;
 
 @Entity
 public class Suggestion extends Model{
@@ -30,4 +31,13 @@ public class Suggestion extends Model{
     public Suggestion(){
         // left blank
     }
+
+
+    public static List<Suggestion> findPage(int page,int size) {
+        return find.where()
+                .orderBy("id asc")
+                .findPagedList(page,size)
+                .getList();
+    }
+
 }

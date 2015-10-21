@@ -47,4 +47,12 @@ public class Transaction extends Model {
         // left blank
     }
 
+
+    public static List<Transaction> findPage(int page,int size) {
+        return find.where()
+                .orderBy("id asc")
+                .findPagedList(page,size)
+                .getList();
+    }
+
 }

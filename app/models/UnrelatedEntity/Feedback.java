@@ -11,6 +11,7 @@ import com.avaje.ebean.Model;
 import play.data.validation.Constraints;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.util.List;
 
 
 @Entity
@@ -37,4 +38,14 @@ public class Feedback extends Model {
     public Feedback(){
         // left blank
     }
+
+
+    public static List<Feedback> findPage(int page,int size) {
+        return find.where()
+                .orderBy("id asc")
+                .findPagedList(page,size)
+                .getList();
+    }
+
+
 }

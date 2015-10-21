@@ -36,4 +36,12 @@ public class Complaint extends Model{
     public Complaint(){
         // left blank
     }
+
+    public static List<Complaint> findPage(int page,int size) {
+        return find.where()
+                .orderBy("id asc")
+                .findPagedList(page,size)
+                .getList();
+    }
+
 }
