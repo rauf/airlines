@@ -9,7 +9,6 @@
                     <h3 class="panel-title">Sign Up!</h3>
                 </div>
 
-
         <div class="panel-body">
             @helper.form(action = routes.Users.save()) {
 
@@ -27,7 +26,7 @@
                             <p><b>E-mail Address</b></p>
                         </div>
                         <div class="col-md-6">
-                            <input type="email" name="product('email')" class="form-control"/>
+                            <input type="email" name="userForm('email')" class="form-control"/>
                         </div>
                     </div>
 
@@ -36,7 +35,7 @@
                             <p><b>Password</b></p>
                         </div>
                         <div class="col-md-3">
-                            <input type="password" name="product('password')" class="form-control"/>
+                            <input type="password" name="userForm('password')" class="form-control"/>
                         </div>
                     </div>
 
@@ -60,7 +59,7 @@
                             <p><b>Date Of Birth</b></p>
                         </div>
                         <div class="col-md-3">
-                            <input type="date" name="product('dateOfBirth')" class="form-control"/>
+                            <input type="date" name="userForm('dateOfBirth')" class="form-control"/>
                         </div>
                     </div>
 
@@ -70,14 +69,14 @@
                             <p><b>Address</b></p>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" name="product('addressLine1')" class="form-control"/>
+                            <input type="text" name="userForm('addressLine1')" class="form-control"/>
                         </div>
                     </div>
 
                     <div class="row margin-top10">
 
                         <div class="col-md-6 col-md-offset-4">
-                            <input type="text" name="product('addressLine2')" class="form-control"/>
+                            <input type="text" name="userForm('addressLine2')" class="form-control"/>
                         </div>
                     </div>
 
@@ -87,7 +86,7 @@
                             <p><b>Pincode</b></p>
                         </div>
                         <div class="col-md-3">
-                            <input type="number" name="product('pincode')" class="form-control"/>
+                            <input type="number" name="userForm('pincode')" class="form-control"/>
                         </div>
                     </div>
 
@@ -96,7 +95,7 @@
                             <p><b>Contact No.</b></p>
                         </div>
                         <div class="col-md-6">
-                            <input type="number" name="product('contactNo')" class="form-control"/>
+                            <input type="number" name="userForm('contactNo')" class="form-control"/>
                         </div>
                     </div>
 
@@ -106,7 +105,7 @@
                             <p><b>Security Question</b></p>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" name="product('dateOfBirth')" class="form-control"/>
+                            <input type="text" name="userForm('dateOfBirth')" class="form-control"/>
                         </div>
                     </div>
 
@@ -116,7 +115,7 @@
                             <p><b>Security Answer</b></p>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" name="product('securityAnswer')" class="form-control"/>
+                            <input type="text" name="userForm('securityAnswer')" class="form-control"/>
                         </div>
                     </div>
 
@@ -126,7 +125,7 @@
                         <p><b>Profile Picture</b></p>
                     </div>
                     <div class="col-md-4">
-                        <input type="file" name="product('picture')" class="form-control"/>
+                        <input type="file" name="userForm('picture')" class="form-control"/>
                     </div>
                 </div>
 
