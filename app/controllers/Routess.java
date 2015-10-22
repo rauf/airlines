@@ -8,7 +8,7 @@ import play.mvc.Result;
 /**
  * Created by randomlocks on 10/22/2015.
  */
-public class Routes extends Controller {
+public class Routess extends Controller {
 
 
     public Result list(int page) {

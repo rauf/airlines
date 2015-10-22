@@ -88,15 +88,15 @@ DELETE        /feedbacks/:id                @controllers.Feedbacks.delete(id : I
 
 
 
-GET           /flights/new                   @controllers.Flights.newFlight()
+GET           /flights/new                  @controllers.Flights.newFlight()
 
-GET           /flights/                      @controllers.Flights.list(page: Int ?=0)
+GET           /flights/                     @controllers.Flights.list(page: Int ?=0)
 
-GET           /flights/:id                   @controllers.Flights.details(id: Int)
+GET           /flights/:id                  @controllers.Flights.details(id: Int)
 
-POST          /flights/                      @controllers.Flights.save()
+POST          /flights/                     @controllers.Flights.save()
 
-DELETE        /flights/:id                   @controllers.Flights.delete(id : Int)
+DELETE        /flights/:id                  @controllers.Flights.delete(id : Int)
 
 
 
@@ -113,15 +113,15 @@ DELETE        /passengers/:id               @controllers.Passengers.delete(id : 
 
 
 
-GET           /routes/new                   @controllers.Routes.newRoute()
+GET           /routes/new                   @controllers.Routess.newRoute()
 
-GET           /routes/                      @controllers.Routes.list(page: Int ?=0)
+GET           /routes/                      @controllers.Routess.list(page: Int ?=0)
 
-GET           /routes/:id                   @controllers.Routes.details(id: Int)
+GET           /routes/:id                   @controllers.Routess.details(id: Int)
 
-POST          /routes/                      @controllers.Routes.save()
+POST          /routes/                      @controllers.Routess.save()
 
-DELETE        /routes/:id                   @controllers.Routes.delete(id : Int)
+DELETE        /routes/:id                   @controllers.Routess.delete(id : Int)
 
 
 

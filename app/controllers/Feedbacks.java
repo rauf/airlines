@@ -5,12 +5,16 @@ package controllers;
  */
 import com.avaje.ebean.PagedList;
 import models.UnrelatedEntity.Feedback;
+import play.data.Form;
 import play.mvc.Result;
 import play.mvc.Controller;
+import views.html.User.Feedback.newFeedback;
+import views.html.User.Feedback.feedbackredirect;
 
-import java.util.List;
+
 
 public class Feedbacks extends Controller{
+    private static final Form<Feedback> feedbackform = Form.form(Feedback.class);
 
 
     public Result list(int page) {
@@ -20,11 +24,23 @@ public class Feedbacks extends Controller{
     }
 
     public Result newFeedback() {
-        return TODO;
+        return ok(newFeedback.render(feedbackform));
+
+
     }
 
     public Result save() {
-        return TODO;
+
+        Form<Feedback> form = feedbackform.bindFromRequest();
+        Feedback feedback = form.get();
+
+        feedback.save();   // saves in the Feedback table
+
+
+
+
+        //flash("success",String.format("Thankyou for the feedback"));
+        return ok(feedbackredirect.render());
     }
 
     public Result delete(int id) {
@@ -35,5 +51,11 @@ public class Feedbacks extends Controller{
     public Result details(int id) {
         return TODO;
     }
+
+
+
+
+
+
 
 }

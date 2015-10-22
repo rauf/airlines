@@ -6,13 +6,30 @@ package controllers;
 
 import com.avaje.ebean.PagedList;
 import models.Suggestion;
+import play.data.Form;
 import play.mvc.Result;
 import play.mvc.Controller;
+
+import views.html.index;
 
 import java.util.List;
 
 public class Suggestions extends Controller {
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /****************************METHODS*************************************/
 
     public Result list(int page) {
         PagedList<Suggestion> list = Suggestion.findPage(page, 10);
@@ -21,6 +38,8 @@ public class Suggestions extends Controller {
     }
 
     public Result newSuggestion() {
+
+
         return TODO;
     }
 
