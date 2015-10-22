@@ -1,0 +1,151 @@
+@(userForm : Form[User])
+
+@main("Sign Up!") {
+    <div class="container-fluid">
+    <div class="container ">
+        <div class="col-md-10 col-md-offset-1 margin-top40">
+            <div class="panel panel-primary margin-top70">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Sign Up!</h3>
+                </div>
+
+
+        <div class="panel-body">
+            @helper.form(action = routes.Users.save()) {
+
+                 <div class="row margin-top40">
+                    <div class="col-md-2 col-md-offset-2 ">
+                        <label><b>Full Name</b></label>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" name="userForm('firstName')"/>
+                    </div>
+                </div>
+
+                    <div class="row margin-top20">
+                        <div class="col-md-2 col-md-offset-2">
+                            <p><b>E-mail Address</b></p>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email" name="product('email')" class="form-control"/>
+                        </div>
+                    </div>
+
+                    <div class="row margin-top20">
+                        <div class="col-md-2 col-md-offset-2">
+                            <p><b>Password</b></p>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="password" name="product('password')" class="form-control"/>
+                        </div>
+                    </div>
+
+
+                    <div class="row margin-top20">
+                        <div class="col-md-2 col-md-offset-2">
+                            <p><b>Gender</b></p>
+                        </div>
+                        <div class="col-md-3">
+                           <select class="form-control">
+                               <option value="na">Select</option>
+                               <option value="male">Male</option>
+                               <option value="female">Female</option>
+                           </select>
+                        </div>
+                    </div>
+
+
+                    <div class="row margin-top20">
+                        <div class="col-md-2 col-md-offset-2">
+                            <p><b>Date Of Birth</b></p>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="date" name="product('dateOfBirth')" class="form-control"/>
+                        </div>
+                    </div>
+
+
+                    <div class="row margin-top20">
+                        <div class="col-md-2 col-md-offset-2">
+                            <p><b>Address</b></p>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" name="product('addressLine1')" class="form-control"/>
+                        </div>
+                    </div>
+
+                    <div class="row margin-top10">
+
+                        <div class="col-md-6 col-md-offset-4">
+                            <input type="text" name="product('addressLine2')" class="form-control"/>
+                        </div>
+                    </div>
+
+
+                    <div class="row margin-top20">
+                        <div class="col-md-2 col-md-offset-2">
+                            <p><b>Pincode</b></p>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="number" name="product('pincode')" class="form-control"/>
+                        </div>
+                    </div>
+
+                    <div class="row margin-top20">
+                        <div class="col-md-2 col-md-offset-2">
+                            <p><b>Contact No.</b></p>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="number" name="product('contactNo')" class="form-control"/>
+                        </div>
+                    </div>
+
+
+                    <div class="row margin-top20">
+                        <div class="col-md-2 col-md-offset-2">
+                            <p><b>Security Question</b></p>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" name="product('dateOfBirth')" class="form-control"/>
+                        </div>
+                    </div>
+
+
+                    <div class="row margin-top20">
+                        <div class="col-md-2 col-md-offset-2">
+                            <p><b>Security Answer</b></p>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" name="product('securityAnswer')" class="form-control"/>
+                        </div>
+                    </div>
+
+
+                <div class="row margin-top20">
+                    <div class="col-md-2 col-md-offset-2">
+                        <p><b>Profile Picture</b></p>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="file" name="product('picture')" class="form-control"/>
+                    </div>
+                </div>
+
+
+                <div class="row margin-top40">
+
+                    <div class="col-md-4 col-md-offset-4">
+                        <input type="submit" class="btn  btn-primary" value="Submit" />
+                    </div>
+                </div>
+
+                <div class="margin-top40">
+
+                </div>
+
+            </div>
+            }
+        </div>
+    </div>
+    </div>
+    </div>
+}

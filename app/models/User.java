@@ -30,7 +30,13 @@ public class User extends Model {
     @Constraints.Required
     public String gender;
 
-    public String address;
+    public String addressLine1;
+
+    public String addressLine2;
+
+    @Constraints.Min(6)
+    @Constraints.Max(6)
+    public int pincode;
 
     @Constraints.Required
     public String contactNo;    // multivalued
@@ -43,14 +49,14 @@ public class User extends Model {
     @Formats.DateTime(pattern = "dd-MM-yyyy")
     public Date dateOfBirth;
 
-    @Constraints.Required
-    public String securityAnswer;
-
     //derived from DOB
     public int age;
 
     @ManyToOne
     public SecurityQuestion securityQuestion;
+
+    @Constraints.Required
+    public String securityAnswer;
 
     @ManyToMany
     public List<Flight> flights;

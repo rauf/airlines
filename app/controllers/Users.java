@@ -5,8 +5,10 @@ package controllers;
  */
 
 import models.User;
+import play.data.Form;
 import play.mvc.Result;
 import play.mvc.Controller;
+import views.html.user.signup;
 
 import java.util.List;
 
@@ -19,7 +21,8 @@ public class Users extends Controller{
     }
 
     public Result newUser() {
-        return TODO;
+        Form<User> form = Form.form(User.class);
+        return ok(signup.render(form));
     }
 
     public Result details(int id) {
