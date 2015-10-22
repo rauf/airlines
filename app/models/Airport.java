@@ -6,6 +6,7 @@ package models;
  */
 
 import com.avaje.ebean.Model;
+import com.avaje.ebean.PagedList;
 import play.data.validation.Constraints;
 
 import javax.persistence.Entity;
@@ -29,13 +30,13 @@ public class Airport extends Model {
 
     /***************************************ATTRIBUTES*********************************************/
 
-    @Constraints.Required
+
     public String name;
 
-    @Constraints.Required
+
     public String country;
 
-    @Constraints.Required
+
     public String city;
 
 
@@ -47,4 +48,18 @@ public class Airport extends Model {
     public Airport(){
         // left blank
     }
+
+/***************************************METHODS**************************************************/
+
+public static PagedList findPage(int page , int index) {
+
+    return find.where()
+            .orderBy("id asc")
+            .findPagedList(page,index);
+
+}
+
+
+
+
 }

@@ -4,6 +4,7 @@ package controllers;
  * Created by abdul on 10/21/15.
  */
 
+import com.avaje.ebean.PagedList;
 import models.User;
 import play.data.Form;
 import play.mvc.Result;
@@ -15,8 +16,7 @@ import java.util.List;
 public class Users extends Controller{
 
     public Result list(int page) {
-        List<User> list = User.findPage(page, 10);
-        //return ok(list.render);
+        PagedList<User> list = User.findPage(page, 10);
         return TODO;
     }
 

@@ -4,6 +4,7 @@ package controllers;
  * Created by abdul on 10/21/15.
  */
 
+import com.avaje.ebean.PagedList;
 import models.Suggestion;
 import play.mvc.Result;
 import play.mvc.Controller;
@@ -14,7 +15,7 @@ public class Suggestions extends Controller {
 
 
     public Result list(int page) {
-        List<Suggestion> list = Suggestion.findPage(page, 10);
+        PagedList<Suggestion> list = Suggestion.findPage(page, 10);
         //return ok(list.render);
         return TODO;
     }

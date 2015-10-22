@@ -1,6 +1,7 @@
 package models;
 
 import com.avaje.ebean.Model;
+import com.avaje.ebean.PagedList;
 import play.data.validation.Constraints;
 
 import javax.persistence.Entity;
@@ -26,14 +27,14 @@ public class Airplane extends Model {
 
 
     /**************************** ATTRIBUTES ************************************************/
-    @Constraints.Required
+
     public String reg_no;  // Registration number-mix of alphabet and number
 
 
-    @Constraints.Required
+
     public String type;
 
-    @Constraints.Required
+
     public String total_seat;
 
 
@@ -44,4 +45,32 @@ public class Airplane extends Model {
     public Airplane(){
         // left blank
     }
+
+
+ /**************************************METHODS***************************************************/
+
+ public static PagedList findPage(int page , int index) {
+
+     return find.where()
+             .orderBy("id asc")
+             .findPagedList(page,index);
+
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
+
+
+

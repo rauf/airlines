@@ -22,6 +22,33 @@ DELETE        /admins/:id                   @controllers.Admins.delete(id : Int)
 
 
 
+
+GET           /airplanes/new                @controllers.Airplanes.newAirplane()
+
+GET           /airplanes/                   @controllers.Airplanes.list(page: Int ?=0)
+
+GET           /airplanes/:id                @controllers.Airplanes.details(id: Int)
+
+POST          /airplanes/                   @controllers.Airplanes.save()
+
+DELETE        /airplanes/:id                @controllers.Airplanes.delete(id : Int)
+
+
+
+
+GET           /airports/new                 @controllers.Airports.newAirport()
+
+GET           /airports/                    @controllers.Airports.list(page: Int ?=0)
+
+GET           /airports/:id                 @controllers.Airports.details(id: Int)
+
+POST          /airports/                    @controllers.Airports.save()
+
+DELETE        /airports/:id                 @controllers.Airports.delete(id : Int)
+
+
+
+
 GET           /complaints/new               @controllers.Complaints.newComplaint()
 
 GET           /complaints/                  @controllers.Complaints.list(page: Int ?=0)
@@ -31,6 +58,20 @@ GET           /complaints/:id               @controllers.Complaints.details(id: 
 POST          /complaints/                  @controllers.Complaints.save()
 
 DELETE        /complaints/:id               @controllers.Complaints.delete(id : Int)
+
+
+
+
+GET           /fares/new                    @controllers.Fares.newFare()
+
+GET           /fares/                       @controllers.Fares.list(page: Int ?=0)
+
+GET           /fares/:id                    @controllers.Fares.details(id: Int)
+
+POST          /fares/                       @controllers.Fares.save()
+
+DELETE        /fares/:id                    @controllers.Fares.delete(id : Int)
+
 
 
 
@@ -46,6 +87,19 @@ DELETE        /feedbacks/:id                @controllers.Feedbacks.delete(id : I
 
 
 
+
+GET           /flights/new                   @controllers.Flights.newFlight()
+
+GET           /flights/                      @controllers.Flights.list(page: Int ?=0)
+
+GET           /flights/:id                   @controllers.Flights.details(id: Int)
+
+POST          /flights/                      @controllers.Flights.save()
+
+DELETE        /flights/:id                   @controllers.Flights.delete(id : Int)
+
+
+
 GET           /passengers/new               @controllers.Passengers.newPassenger()
 
 GET           /passengers/                  @controllers.Passengers.list(page: Int ?=0)
@@ -55,6 +109,20 @@ GET           /passengers/:id               @controllers.Passengers.details(id: 
 POST          /passengers/                  @controllers.Passengers.save()
 
 DELETE        /passengers/:id               @controllers.Passengers.delete(id : Int)
+
+
+
+
+GET           /routes/new                   @controllers.Routes.newRoute()
+
+GET           /routes/                      @controllers.Routes.list(page: Int ?=0)
+
+GET           /routes/:id                   @controllers.Routes.details(id: Int)
+
+POST          /routes/                      @controllers.Routes.save()
+
+DELETE        /routes/:id                   @controllers.Routes.delete(id : Int)
+
 
 
 

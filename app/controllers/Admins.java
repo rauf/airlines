@@ -3,6 +3,7 @@ package controllers;
 /**
  * Created by abdul on 10/21/15.
  */
+import com.avaje.ebean.PagedList;
 import models.Admin;
 import models.Passenger;
 import play.mvc.Result;
@@ -16,7 +17,7 @@ public class Admins extends Controller{
 
 
     public Result list(int page) {
-        List<Admin> list = Admin.findPage(page, 10);
+        PagedList<Admin> list = Admin.findPage(page, 10);
         //return ok(list.render);
         return TODO;
     }

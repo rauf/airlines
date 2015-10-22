@@ -1,5 +1,6 @@
 package controllers;
 
+import com.avaje.ebean.PagedList;
 import models.Complaint;
 import play.mvc.Result;
 import play.mvc.Controller;
@@ -14,7 +15,7 @@ public class Complaints extends Controller{
 
 
     public Result list(int page) {
-        List<Complaint> complaints = Complaint.findPage(page, 10);
+        PagedList<Complaint> complaints = Complaint.findPage(page, 10);
         return TODO;
     }
 

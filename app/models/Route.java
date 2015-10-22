@@ -5,6 +5,7 @@ package models;
  */
 
 import com.avaje.ebean.Model;
+import com.avaje.ebean.PagedList;
 import play.data.validation.Constraints;
 
 import javax.persistence.*;
@@ -34,10 +35,10 @@ public class Route extends Model {
 
 
     /**************************************ATTRIBUTE****************************************/
-@Constraints.Required
+
     public String source;
 
-    @Constraints.Required
+
     public String destination;
 
     //optional
@@ -48,4 +49,17 @@ public class Route extends Model {
     public Route(){
         // left blank
     }
+
+/**********************************ROUTE**********************************************/
+
+public static PagedList findPage(int page , int index) {
+
+    return find.where()
+            .orderBy("id asc")
+            .findPagedList(page,index);
+
+}
+
+
+
 }
