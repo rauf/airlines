@@ -8,6 +8,7 @@ package models.UnrelatedEntity;
 /* A thankyou window is open which after sometime redirect you to home page */
 
 import com.avaje.ebean.Model;
+import com.avaje.ebean.PagedList;
 import play.data.validation.Constraints;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -40,11 +41,11 @@ public class Feedback extends Model {
     }
 
 
-    public static List<Feedback> findPage(int page,int size) {
+    public static PagedList<Feedback> findPage(int page,int size) {
         return find.where()
                 .orderBy("id asc")
-                .findPagedList(page,size)
-                .getList();
+                .findPagedList(page,size);
+
     }
 
 

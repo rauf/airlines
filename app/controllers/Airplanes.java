@@ -1,26 +1,23 @@
 package controllers;
 
-/**
- * Created by abdul on 10/21/15.
- */
-
 import com.avaje.ebean.PagedList;
-import models.Transaction;
-import play.mvc.Result;
+import models.Airplane;
 import play.mvc.Controller;
+import play.mvc.Result;
 
-import java.util.List;
-
-public class Transactions extends Controller{
+/**
+ * Created by randomlocks on 10/22/2015.
+ */
+public class Airplanes extends Controller {
 
 
     public Result list(int page) {
-        PagedList<Transaction> list = Transaction.findPage(page, 10);
+        PagedList<Airplane> list = Airplane.findPage(page, 10);
         //return ok(list.render);
         return TODO;
     }
 
-    public Result newTransaction() {
+    public Result newAirplane() {
         return TODO;
     }
 
@@ -35,4 +32,7 @@ public class Transactions extends Controller{
     public Result delete(int id) {
         return TODO;
     }
+
+
+
 }

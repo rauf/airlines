@@ -5,6 +5,7 @@ package models;
  */
 
 import com.avaje.ebean.Model;
+import com.avaje.ebean.PagedList;
 import play.data.validation.Constraints;
 
 import javax.persistence.Entity;
@@ -33,11 +34,11 @@ public class Suggestion extends Model{
     }
 
 
-    public static List<Suggestion> findPage(int page,int size) {
+    public static PagedList<Suggestion> findPage(int page,int size) {
         return find.where()
                 .orderBy("id asc")
-                .findPagedList(page,size)
-                .getList();
+                .findPagedList(page,size);
+
     }
 
 }

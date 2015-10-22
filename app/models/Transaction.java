@@ -5,6 +5,7 @@ package models;
  */
 
 import com.avaje.ebean.Model;
+import com.avaje.ebean.PagedList;
 import play.data.format.Formats;
 import play.data.validation.Constraints;
 
@@ -48,11 +49,11 @@ public class Transaction extends Model {
     }
 
 
-    public static List<Transaction> findPage(int page,int size) {
+    public static PagedList<Transaction> findPage(int page,int size) {
         return find.where()
                 .orderBy("id asc")
-                .findPagedList(page,size)
-                .getList();
+                .findPagedList(page,size);
+
     }
 
 }

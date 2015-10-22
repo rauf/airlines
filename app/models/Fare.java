@@ -6,6 +6,7 @@ package models;
 
 
 import com.avaje.ebean.Model;
+import com.avaje.ebean.PagedList;
 import play.data.validation.Constraints;
 
 import javax.persistence.Entity;
@@ -29,18 +30,31 @@ public class Fare extends Model {
 
     /**************************************************ATTRIBUTES*********************************************/
 
-    @Constraints.Required
+
     public int amount;
 
-    @Constraints.Required
+
     public String description;   // a brief description related to Fare charge
 
-    @Constraints.Required
+
     public String condition;   //fare condition like mode of payment or Minimum age etc .
 
 
     public Fare(){
         // left blank
     }
+
+/**************************************************METHODS******************************************************/
+
+
+ public static PagedList findPage(int page , int index) {
+
+     return find.where()
+             .orderBy("id asc")
+             .findPagedList(page,index);
+
+ }
+
+
 }
 

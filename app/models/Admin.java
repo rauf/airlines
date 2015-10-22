@@ -5,6 +5,7 @@ package models;
  */
 
 import com.avaje.ebean.Model;
+import com.avaje.ebean.PagedList;
 import play.api.mvc.Result;
 import play.data.format.Formats;
 import play.data.validation.Constraints;
@@ -62,11 +63,11 @@ public class Admin extends Model{
         //left blank
     }
 
-    public static List<Admin> findPage(int page,int size) {
+    public static PagedList<Admin> findPage(int page,int size) {
         return   find.where()
                 .orderBy("id asc")
-                .findPagedList(page,size)
-                .getList();
+                .findPagedList(page,size);
+
     }
 
 }

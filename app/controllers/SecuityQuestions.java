@@ -5,6 +5,7 @@ package controllers;
  * Created by abdul on 10/21/15.
  */
 
+import com.avaje.ebean.PagedList;
 import models.SecurityQuestion;
 import play.mvc.Result;
 import play.mvc.Controller;
@@ -14,7 +15,7 @@ import java.util.List;
 public class SecuityQuestions extends Controller {
 
     public Result list(int page) {
-        List<SecurityQuestion> securityQuestions = SecurityQuestion.findPage(page, 10);
+        PagedList<SecurityQuestion> securityQuestions = SecurityQuestion.findPage(page, 10);
         return TODO;
     }
 
