@@ -38,7 +38,6 @@ public class SecurityQuestion extends Model{
         return find.where()
                 .orderBy("id asc")
                 .findPagedList(page,size);
-
     }
 
 }

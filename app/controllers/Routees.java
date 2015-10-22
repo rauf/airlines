@@ -1,18 +1,18 @@
 package controllers;
 
 import com.avaje.ebean.PagedList;
-import models.Route;
+import models.Routee;
 import play.mvc.Controller;
 import play.mvc.Result;
 
 /**
  * Created by randomlocks on 10/22/2015.
  */
-public class Routes extends Controller {
+public class Routees extends Controller {
 
 
     public Result list(int page) {
-        PagedList<Route> list = Route.findPage(page, 10);
+        PagedList<Routee> list = Routee.findPage(page, 10);
         //return ok(list.render);
         return TODO;
     }

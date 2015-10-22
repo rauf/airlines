@@ -7,7 +7,6 @@ package models;
 
 import com.avaje.ebean.Model;
 import com.avaje.ebean.PagedList;
-import play.data.validation.Constraints;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -22,7 +21,7 @@ public class Fare extends Model {
     public Long id;
 
     @OneToMany(mappedBy = "fare")
-    public List<Route> routes;
+    public List<Routee> routees;
 
 
     public static Finder<Long,Fare> find = new Finder<>(Fare.class);

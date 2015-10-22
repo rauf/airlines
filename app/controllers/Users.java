@@ -29,8 +29,21 @@ public class Users extends Controller{
         return TODO;
     }
 
-    public Result save() {
+    public Result edit(int id){
         return TODO;
+    }
+
+    public Result save() {
+        Form form = Form.form(User.class);
+        Form boundForm = form.bindFromRequest();
+
+        if(boundForm.hasErrors())
+            return badRequest(signup.render(boundForm));
+
+        User user = (User) boundForm.get();
+        user.save();
+
+        return ok();
     }
 
     public Result delete(int id) {

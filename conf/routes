@@ -1,5 +1,5 @@
 # Routes
-# This file defines all application routes (Higher priority routes first)
+# This file defines all application routees (Higher priority routees first)
 # ~~~~
 
 # Home page
@@ -113,15 +113,15 @@ DELETE        /passengers/:id               @controllers.Passengers.delete(id : 
 
 
 
-GET           /routes/new                   @controllers.Routes.newRoute()
+GET           /routes/new                   @controllers.Routees.newRoute()
 
-GET           /routes/                      @controllers.Routes.list(page: Int ?=0)
+GET           /routes/                      @controllers.Routees.list(page: Int ?=0)
 
-GET           /routes/:id                   @controllers.Routes.details(id: Int)
+GET           /routes/:id                   @controllers.Routees.details(id: Int)
 
-POST          /routes/                      @controllers.Routes.save()
+POST          /routes/                      @controllers.Routees.save()
 
-DELETE        /routes/:id                   @controllers.Routes.delete(id : Int)
+DELETE        /routes/:id                   @controllers.Routees.delete(id : Int)
 
 
 

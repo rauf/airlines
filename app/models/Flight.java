@@ -48,7 +48,7 @@ public class Flight extends Model{
     public List<Airplane> airplanes;
 
     @ManyToOne
-    public Route route;
+    public Routee routee;
 
 
     public static Finder<Long,Flight> find = new Finder<>(Flight.class);

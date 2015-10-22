@@ -6,14 +6,13 @@ package models;
 
 import com.avaje.ebean.Model;
 import com.avaje.ebean.PagedList;
-import play.data.validation.Constraints;
 
 import javax.persistence.*;
 import java.util.List;
 
 
 @Entity
-public class Route extends Model {
+public class Routee extends Model {
 
 
     @Id
@@ -25,12 +24,12 @@ public class Route extends Model {
     @ManyToOne
     public Fare fare;
 
-    @OneToMany(mappedBy = "route")
+    @OneToMany(mappedBy = "routee")
     public List<Flight> flights;
 
 
 
-    public static Finder<Long,Route> find = new Finder<>(Route.class);
+    public static Finder<Long, Routee> find = new Finder<>(Routee.class);
 
 
 
@@ -46,7 +45,7 @@ public class Route extends Model {
 
 
 
-    public Route(){
+    public Routee(){
         // left blank
     }
 
