@@ -5,12 +5,15 @@ package controllers;
  */
 
 import com.avaje.ebean.PagedList;
+import com.google.common.io.Files;
 import models.User;
 import play.data.Form;
+import play.mvc.Http.MultipartFormData;
 import play.mvc.Result;
 import play.mvc.Controller;
 import views.html.user.signup;
 
+import java.io.File;
 import java.util.List;
 
 public class Users extends Controller{
@@ -34,16 +37,31 @@ public class Users extends Controller{
     }
 
     public Result save() {
-        Form form = Form.form(User.class);
-        Form boundForm = form.bindFromRequest();
 
-        if(boundForm.hasErrors())
+        Form<User> boundForm = Form.form(User.class).bindFromRequest();
+
+        if(boundForm.hasErrors()) {
+            flash("error", boundForm.errors().toString());
             return badRequest(signup.render(boundForm));
+        }
 
-        User user = (User) boundForm.get();
+        User user = boundForm.get();
+
+        MultipartFormData multipartFormData = request().body().asMultipartFormData();
+        MultipartFormData.FilePart filePart = multipartFormData.getFile("picture");
+
+        if(filePart!=null) {
+            File picture = filePart.getFile();
+            try {
+                user.picture = Files.toByteArray(picture);
+            } catch (Exception e) {
+
+            }
+        }
+
         user.save();
 
-        return ok();
+        return ok(signup.render(Form.form(User.class)));
     }
 
     public Result delete(int id) {

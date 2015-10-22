@@ -1,8 +1,7 @@
 @(userForm:Form[User])
 
 @main("Sign Up!") {
-    <div class="container-fluid">
-    <div class="container ">
+    <div class="container">
         <div class="col-md-10 col-md-offset-1 margin-top40">
             <div class="panel panel-primary margin-top70">
                 <div class="panel-heading">
@@ -10,14 +9,17 @@
                 </div>
 
         <div class="panel-body">
-            @helper.form(action = routes.Users.save()) {
+            @helper.form(action = routes.Users.save() , 'enctype -> "multipart/form-data") {
 
                  <div class="row margin-top40">
                     <div class="col-md-2 col-md-offset-2 ">
                         <label><b>Full Name</b></label>
                     </div>
                     <div class="col-md-6">
-                        <input type="text" class="form-control" name="@userForm("firstName")"/>
+                      @*  @helper.inputText(userForm("name"))
+*@
+                          <input type="text" name="name" class="form-control" />
+
                     </div>
                 </div>
 
@@ -26,7 +28,7 @@
                             <p><b>E-mail Address</b></p>
                         </div>
                         <div class="col-md-6">
-                            <input type="email" name="@userForm("email")" class="form-control"/>
+                            <input type="email" name="email" class="form-control"/>
                         </div>
                     </div>
 
@@ -35,9 +37,10 @@
                             <p><b>Password</b></p>
                         </div>
                         <div class="col-md-3">
-                            <input type="password" name="@userForm("password")" class="form-control"/>
+                            <input type="password" name="password" class="form-control"/>
                         </div>
                     </div>
+
 
 
                     <div class="row margin-top20">
@@ -54,12 +57,13 @@
                     </div>
 
 
+
                     <div class="row margin-top20">
                         <div class="col-md-2 col-md-offset-2">
                             <p><b>Date Of Birth</b></p>
                         </div>
                         <div class="col-md-3">
-                            <input type="date" name="@userForm("dateOfBirth")" class="form-control"/>
+                            <input type="date" name="dateOfBirth" class="form-control"/>
                         </div>
                     </div>
 
@@ -69,14 +73,14 @@
                             <p><b>Address</b></p>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" name="@userForm("addressLine1")" class="form-control"/>
+                            <input type="text" name="addressLine1" class="form-control"/>
                         </div>
                     </div>
 
                     <div class="row margin-top10">
 
                         <div class="col-md-6 col-md-offset-4">
-                            <input type="text" name="@userForm("addressLine2")" class="form-control"/>
+                            <input type="text" name="addressLine2" class="form-control"/>
                         </div>
                     </div>
 
@@ -86,7 +90,7 @@
                             <p><b>Pincode</b></p>
                         </div>
                         <div class="col-md-3">
-                            <input type="number" name="@userForm("pincode")" class="form-control"/>
+                            <input type="number" name="pinCode" class="form-control"/>
                         </div>
                     </div>
 
@@ -95,9 +99,10 @@
                             <p><b>Contact No.</b></p>
                         </div>
                         <div class="col-md-6">
-                            <input type="number" name="@userForm("contactNo")" class="form-control"/>
+                            <input type="number" name="contactNo" class="form-control"/>
                         </div>
                     </div>
+
 
 
                     <div class="row margin-top20">
@@ -105,9 +110,10 @@
                             <p><b>Security Question</b></p>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" name="@userForm("dateOfBirth")" class="form-control"/>
+                            <input type="text"  class="form-control"/>
                         </div>
                     </div>
+
 
 
                     <div class="row margin-top20">
@@ -115,9 +121,10 @@
                             <p><b>Security Answer</b></p>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" name="@userForm("securityAnswer")" class="form-control"/>
+                            <input type="text" name="securityAnswer" class="form-control"/>
                         </div>
                     </div>
+
 
 
                 <div class="row margin-top20">
@@ -125,9 +132,10 @@
                         <p><b>Profile Picture</b></p>
                     </div>
                     <div class="col-md-4">
-                        <input type="file" name="@userForm("picture")" class="form-control"/>
+                        <input type="file" name="picture" class="form-control"/>
                     </div>
                 </div>
+
 
 
                 <div class="row margin-top40">
@@ -144,7 +152,6 @@
             </div>
             }
         </div>
-    </div>
     </div>
     </div>
 }

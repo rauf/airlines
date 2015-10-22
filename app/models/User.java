@@ -25,28 +25,28 @@ public class User extends Model {
     public String name;
 
     @Constraints.MinLength(6)
-    @Constraints.Required
+    //@Constraints.Required
     public String password;
 
-    @Constraints.Required
+    //@Constraints.Required
     public String gender;
 
     public String addressLine1;
 
     public String addressLine2;
 
-    @Constraints.Min(6)
-    @Constraints.Max(6)
-    public int pincode;
+   // @Constraints.Min(6)
+    //@Constraints.Max(6)
+    public int pinCode;
 
-    @Constraints.Required
+    //@Constraints.Required
     public String contactNo;    // multivalued
 
-    @Constraints.Required
+    //@Constraints.Required
     @Constraints.Email
     public String email;
 
-    @Constraints.Required
+   // @Constraints.Required
     @Formats.DateTime(pattern = "dd-MM-yyyy")
     public Date dateOfBirth;
 
@@ -56,7 +56,7 @@ public class User extends Model {
     @ManyToOne
     public SecurityQuestion securityQuestion;
 
-    @Constraints.Required
+    //@Constraints.Required
     public String securityAnswer;
 
     @ManyToMany
