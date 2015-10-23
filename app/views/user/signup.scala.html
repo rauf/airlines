@@ -1,25 +1,26 @@
-@(userForm:Form[User])
+@(userForm:Form[User],questions:List[SecurityQuestion])
 
-@main("Sign Up!") {
+@main("User Account") {
     <div class="container">
         <div class="col-md-10 col-md-offset-1 margin-top40">
             <div class="panel panel-primary margin-top70">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Sign Up!</h3>
+                    <h3 class="panel-title">User Account</h3>
                 </div>
 
         <div class="panel-body">
             @helper.form(action = routes.Users.save() , 'enctype -> "multipart/form-data") {
+
+                <div class="row">
+                    <input type="hidden" name="id" value="@userForm("id").valueOr("")"/>
+                </div>
 
                  <div class="row margin-top40">
                     <div class="col-md-2 col-md-offset-2 ">
                         <label><b>Full Name</b></label>
                     </div>
                     <div class="col-md-6">
-                      @*  @helper.inputText(userForm("name"))
-*@
-                          <input type="text" name="name" class="form-control" />
-
+                          <input type="text" name="name" value="@userForm("name").valueOr("")" class="form-control" />
                     </div>
                 </div>
 
@@ -28,7 +29,7 @@
                             <p><b>E-mail Address</b></p>
                         </div>
                         <div class="col-md-6">
-                            <input type="email" name="email" class="form-control"/>
+                            <input type="email" name="email" value="@userForm("email").valueOr("")" class="form-control"/>
                         </div>
                     </div>
 
@@ -37,50 +38,56 @@
                             <p><b>Password</b></p>
                         </div>
                         <div class="col-md-3">
-                            <input type="password" name="password" class="form-control"/>
+                            <input type="password" name="password" value="@userForm("password").valueOr("")" class="form-control"/>
                         </div>
                     </div>
-
-
 
                     <div class="row margin-top20">
                         <div class="col-md-2 col-md-offset-2">
                             <p><b>Gender</b></p>
                         </div>
                         <div class="col-md-3">
-                           <select class="form-control">
-                               <option value="na">Select</option>
-                               <option value="male">Male</option>
-                               <option value="female">Female</option>
+                           <select class="form-control" name="gender">
+                               @if(userForm("gender").valueOr("").equals("na")) {
+                                   <option selected value="na">Select</option>
+                               }else {
+                                   <option value="na">Select</option>}
+
+                               @if(userForm("gender").valueOr("").equals("Male")) {
+                                   <option selected value="Male">Male</option>
+                               }else {
+                                   <option  value="Male">Male</option>}
+
+                               @if(userForm("gender").valueOr("").equals("Female")) {
+                                   <option selected value="Female">Female</option>
+                               }else {
+                                   <option  value="Female">Female</option>}
                            </select>
                         </div>
                     </div>
-
-
 
                     <div class="row margin-top20">
                         <div class="col-md-2 col-md-offset-2">
                             <p><b>Date Of Birth</b></p>
                         </div>
                         <div class="col-md-3">
-                            <input type="date" name="dateOfBirth" class="form-control"/>
+                            <input type="date" name="dateOfBirth" value="@userForm("dateOfBirth").valueOr("")" pattern="DD-MM-YYYY" class="form-control"/>
                         </div>
                     </div>
-
 
                     <div class="row margin-top20">
                         <div class="col-md-2 col-md-offset-2">
                             <p><b>Address</b></p>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" name="addressLine1" class="form-control"/>
+                            <input type="text" name="addressLine1" value="@userForm("addressLine1").valueOr("")" class="form-control"/>
                         </div>
                     </div>
 
                     <div class="row margin-top10">
 
                         <div class="col-md-6 col-md-offset-4">
-                            <input type="text" name="addressLine2" class="form-control"/>
+                            <input type="text" name="addressLine2"   value="@userForm("addressLine2").valueOr("")" class="form-control"/>
                         </div>
                     </div>
 
@@ -90,7 +97,7 @@
                             <p><b>Pincode</b></p>
                         </div>
                         <div class="col-md-3">
-                            <input type="number" name="pinCode" class="form-control"/>
+                            <input type="number" name="pinCode"  value="@userForm("pinCode").valueOr("")"  class="form-control"/>
                         </div>
                     </div>
 
@@ -99,10 +106,9 @@
                             <p><b>Contact No.</b></p>
                         </div>
                         <div class="col-md-6">
-                            <input type="number" name="contactNo" class="form-control"/>
+                            <input type="number" name="contactNo"  value="@userForm("contactNo").valueOr("")" class="form-control"/>
                         </div>
                     </div>
-
 
 
                     <div class="row margin-top20">
@@ -110,22 +116,24 @@
                             <p><b>Security Question</b></p>
                         </div>
                         <div class="col-md-6">
-                            <input type="text"  class="form-control"/>
+                            <select class="form-control" name="securityQuestion.id" >
+                            @for(ques <- questions) {
+                                @if(userForm("securityQuestion").valueOr("").equals(ques.id.toString)){
+                                     <option selected value="@ques.id" >@ques.question</option>
+                                }else {
+                                    <option  value="@ques.id" >@ques.question</option>}}
+                            </select>
                         </div>
                     </div>
-
-
 
                     <div class="row margin-top20">
                         <div class="col-md-2 col-md-offset-2">
                             <p><b>Security Answer</b></p>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" name="securityAnswer" class="form-control"/>
+                            <input type="text" name="securityAnswer"  value="@userForm("securityAnswer").valueOr("")" class="form-control"/>
                         </div>
                     </div>
-
-
 
                 <div class="row margin-top20">
                     <div class="col-md-2 col-md-offset-2">
@@ -135,8 +143,6 @@
                         <input type="file" name="picture" class="form-control"/>
                     </div>
                 </div>
-
-
 
                 <div class="row margin-top40">
 

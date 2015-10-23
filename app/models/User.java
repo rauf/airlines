@@ -8,13 +8,14 @@ import com.avaje.ebean.Model;
 import com.avaje.ebean.PagedList;
 import play.data.format.Formats;
 import play.data.validation.Constraints;
+import play.mvc.PathBindable;
 
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
 @Entity
-public class User extends Model {
+public class User extends Model implements PathBindable<User> {
 
     @Id
     public Long id;
@@ -23,6 +24,10 @@ public class User extends Model {
 
     @Constraints.Required
     public String name;
+
+    //@Constraints.Required
+    @Constraints.Email
+    public String email;
 
     @Constraints.MinLength(6)
     //@Constraints.Required
@@ -42,12 +47,8 @@ public class User extends Model {
     //@Constraints.Required
     public String contactNo;    // multivalued
 
-    //@Constraints.Required
-    @Constraints.Email
-    public String email;
-
    // @Constraints.Required
-    @Formats.DateTime(pattern = "dd-MM-yyyy")
+    @Formats.DateTime(pattern = "yyyy-MM-dd")
     public Date dateOfBirth;
 
     //derived from DOB
@@ -78,8 +79,43 @@ public class User extends Model {
     public static PagedList<User> findPage(int page,int size) {
         return find.where()
                 .orderBy("id asc")
-                .findPagedList(page,size);
+                .findPagedList(page, size);
 
     }
+
+    public static User getUser(String email, String password){
+        return   find.where()
+                .eq("email",email)
+                .eq("password",password)
+                .findUnique();
+
+    }
+
+    public static User getUserByEmail(String email) {
+        return find.where()
+                .eq("email",email)
+                .findUnique();
+    }
+
+
+    /////////////////////////Path Bindable//////////////////////////
+
+    @Override
+    public User bind(String s, String s1) {
+        return find.byId(Long.parseLong(s1));
+    }
+
+    @Override
+    public String unbind(String s) {
+        return this.id.toString();
+    }
+
+    @Override
+    public String javascriptUnbind() {
+        return this.id.toString();
+    }
+
+
+    ///////////////////////////////////////////////////////////////
 
 }

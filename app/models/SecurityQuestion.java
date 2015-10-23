@@ -40,4 +40,8 @@ public class SecurityQuestion extends Model{
                 .findPagedList(page,size);
     }
 
+    public static List<SecurityQuestion> forDB() {
+        return find.all();
+    }
+
 }

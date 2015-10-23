@@ -12,7 +12,7 @@ import play.mvc.Controller;
 
 import java.util.List;
 
-public class SecuityQuestions extends Controller {
+public class SecurityQuestions extends Controller {
 
     public Result list(int page) {
         PagedList<SecurityQuestion> securityQuestions = SecurityQuestion.findPage(page, 10);
