@@ -1,7 +1,6 @@
 package controllers;
 
-import models.Login;
-import play.*;
+import models.NotEntities.Login;
 import play.data.Form;
 import play.mvc.*;
 
