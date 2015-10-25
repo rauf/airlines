@@ -24,6 +24,10 @@
                                 </span>
                             </div>
 
+                                <div class="col-md-5 col-md-offset-7">
+                                    <a href="@routes.Users.forgotPasswordStep1()"><u>Forgot Password?</u></a>
+                                </div>
+
                                 <div class="row margin-top20">
                                     <div class="col-md-8 col-md-offset-2">
                                     @if(form.hasGlobalErrors) {
@@ -40,13 +44,16 @@
                             </div>
                         </div>
                         }
+
+                        <div class="row text-center margin-top30">
+                            <a href="@routes.Users.newUser()">
+                                <h5><u>Don't have an account? Sign Up.</u></h5>
+                            </a>
+                        </div>
+
                     </div>
 
-                    <div class="row text-center margin-top30">
-                        <a href="@routes.Users.newUser()">
-                            <h4><u>Don't have an account? Sign Up.</u></h4>
-                        </a>
-                    </div>
+
 
                 </div>
             </div>

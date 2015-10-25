@@ -3,186 +3,192 @@
 # ~~~~
 
 # Home page
-GET           /                             @controllers.Application.index()
+GET           /                                  @controllers.Application.index()
 
 # Map static resources from the /public folder to the /assets URL path
-GET           /assets/*file                 @controllers.Assets.versioned(path="/public", file: Asset)
+GET           /assets/*file                      @controllers.Assets.versioned(path="/public", file: Asset)
 
 
 
-GET           /login                        @controllers.Application.login()
+GET           /login                             @controllers.Application.login()
 
-GET           /logout                       @controllers.Application.logout()
+GET           /logout                            @controllers.Application.logout()
 
-POST          /authenticate                 @controllers.Application.authenticate()
+POST          /authenticate                      @controllers.Application.authenticate()
 
 
 
-GET           /admins/new                   @controllers.Admins.newAdmin()
+GET           /admins/new                        @controllers.Admins.newAdmin()
 
-GET           /admins/                      @controllers.Admins.list(page: Int ?=0)
+GET           /admins/                           @controllers.Admins.list(page: Int ?=0)
 
-GET           /admins/:id                   @controllers.Admins.details(id: Int)
+GET           /admins/:id                        @controllers.Admins.details(id: Int)
 
-POST          /admins/                      @controllers.Admins.save()
+POST          /admins/                           @controllers.Admins.save()
 
-DELETE        /admins/:id                   @controllers.Admins.delete(id : Int)
+DELETE        /admins/:id                        @controllers.Admins.delete(id : Int)
 
 
 
 
-GET           /airplanes/new                @controllers.Airplanes.newAirplane()
+GET           /airplanes/new                     @controllers.Airplanes.newAirplane()
 
-GET           /airplanes/                   @controllers.Airplanes.list(page: Int ?=0)
+GET           /airplanes/                        @controllers.Airplanes.list(page: Int ?=0)
 
-GET           /airplanes/:id                @controllers.Airplanes.details(id: Int)
+GET           /airplanes/:id                     @controllers.Airplanes.details(id: Int)
 
-POST          /airplanes/                   @controllers.Airplanes.save()
+POST          /airplanes/                        @controllers.Airplanes.save()
 
-DELETE        /airplanes/:id                @controllers.Airplanes.delete(id : Int)
+DELETE        /airplanes/:id                     @controllers.Airplanes.delete(id : Int)
 
 
 
 
-GET           /airports/new                 @controllers.Airports.newAirport()
+GET           /airports/new                      @controllers.Airports.newAirport()
 
-GET           /airports/                    @controllers.Airports.list(page: Int ?=0)
+GET           /airports/                         @controllers.Airports.list(page: Int ?=0)
 
-GET           /airports/:id                 @controllers.Airports.details(id: Int)
+GET           /airports/:id                      @controllers.Airports.details(id: Int)
 
-POST          /airports/                    @controllers.Airports.save()
+POST          /airports/                         @controllers.Airports.save()
 
-DELETE        /airports/:id                 @controllers.Airports.delete(id : Int)
+DELETE        /airports/:id                      @controllers.Airports.delete(id : Int)
 
 
 
 
-GET           /complaints/new               @controllers.Complaints.newComplaint()
+GET           /complaints/new                    @controllers.Complaints.newComplaint()
 
-GET           /complaints/                  @controllers.Complaints.list(page: Int ?=0)
+GET           /complaints/                       @controllers.Complaints.list(page: Int ?=0)
 
-GET           /complaints/:id               @controllers.Complaints.details(id: Int)
+GET           /complaints/:id                    @controllers.Complaints.details(id: Int)
 
-POST          /complaints/                  @controllers.Complaints.save()
+POST          /complaints/                       @controllers.Complaints.save()
 
-DELETE        /complaints/:id               @controllers.Complaints.delete(id : Int)
+DELETE        /complaints/:id                    @controllers.Complaints.delete(id : Int)
 
 
 
 
-GET           /fares/new                    @controllers.Fares.newFare()
+GET           /fares/new                         @controllers.Fares.newFare()
 
-GET           /fares/                       @controllers.Fares.list(page: Int ?=0)
+GET           /fares/                            @controllers.Fares.list(page: Int ?=0)
 
-GET           /fares/:id                    @controllers.Fares.details(id: Int)
+GET           /fares/:id                         @controllers.Fares.details(id: Int)
 
-POST          /fares/                       @controllers.Fares.save()
+POST          /fares/                            @controllers.Fares.save()
 
-DELETE        /fares/:id                    @controllers.Fares.delete(id : Int)
+DELETE        /fares/:id                         @controllers.Fares.delete(id : Int)
 
 
 
 
-GET           /feedbacks/new                @controllers.Feedbacks.newFeedback()
+GET           /feedbacks/new                     @controllers.Feedbacks.newFeedback()
 
-GET           /feedbacks/                   @controllers.Feedbacks.list(page: Int ?=0)
+GET           /feedbacks/                        @controllers.Feedbacks.list(page: Int ?=0)
 
-GET           /feedbacks/:id                @controllers.Feedbacks.details(id: Int)
+GET           /feedbacks/:id                     @controllers.Feedbacks.details(id: Int)
 
-POST          /feedbacks/                   @controllers.Feedbacks.save()
+POST          /feedbacks/                        @controllers.Feedbacks.save()
 
-DELETE        /feedbacks/:id                @controllers.Feedbacks.delete(id : Int)
+DELETE        /feedbacks/:id                     @controllers.Feedbacks.delete(id : Int)
 
 
 
 
-GET           /flights/new                  @controllers.Flights.newFlight()
+GET           /flights/new                       @controllers.Flights.newFlight()
 
-GET           /flights/                     @controllers.Flights.list(page: Int ?=0)
+GET           /flights/                          @controllers.Flights.list(page: Int ?=0)
 
-GET           /flights/:id                  @controllers.Flights.details(id: Int)
+GET           /flights/:id                       @controllers.Flights.details(id: Int)
 
-POST          /flights/                     @controllers.Flights.save()
+POST          /flights/                          @controllers.Flights.save()
 
-DELETE        /flights/:id                  @controllers.Flights.delete(id : Int)
+DELETE        /flights/:id                       @controllers.Flights.delete(id : Int)
 
 
 
-GET           /passengers/new               @controllers.Passengers.newPassenger()
+GET           /passengers/new                    @controllers.Passengers.newPassenger()
 
-GET           /passengers/                  @controllers.Passengers.list(page: Int ?=0)
+GET           /passengers/                       @controllers.Passengers.list(page: Int ?=0)
 
-GET           /passengers/:id               @controllers.Passengers.details(id: Int)
+GET           /passengers/:id                    @controllers.Passengers.details(id: Int)
 
-POST          /passengers/                  @controllers.Passengers.save()
+POST          /passengers/                       @controllers.Passengers.save()
 
-DELETE        /passengers/:id               @controllers.Passengers.delete(id : Int)
+DELETE        /passengers/:id                    @controllers.Passengers.delete(id : Int)
 
 
 
 
-GET           /routes/new                   @controllers.Routees.newRoute()
+GET           /routes/new                        @controllers.Routees.newRoute()
 
-GET           /routes/                      @controllers.Routees.list(page: Int ?=0)
+GET           /routes/                           @controllers.Routees.list(page: Int ?=0)
 
-GET           /routes/:id                   @controllers.Routees.details(id: Int)
+GET           /routes/:id                        @controllers.Routees.details(id: Int)
 
-POST          /routes/                      @controllers.Routees.save()
+POST          /routes/                           @controllers.Routees.save()
 
-DELETE        /routes/:id                   @controllers.Routees.delete(id : Int)
+DELETE        /routes/:id                        @controllers.Routees.delete(id : Int)
 
 
 
 
-GET           /securityquestions/new        @controllers.SecurityQuestions.newQuestion()
+GET           /securityquestions/new             @controllers.SecurityQuestions.newQuestion()
 
-GET           /securityquestions/           @controllers.SecurityQuestions.list(page: Int ?=0)
+GET           /securityquestions/                @controllers.SecurityQuestions.list(page: Int ?=0)
 
-GET           /securityquestions/:id        @controllers.SecurityQuestions.details(id: Int)
+GET           /securityquestions/:id             @controllers.SecurityQuestions.details(id: Int)
 
-POST          /securityquestions/           @controllers.SecurityQuestions.save()
+POST          /securityquestions/                @controllers.SecurityQuestions.save()
 
-DELETE        /securityquestions/:id        @controllers.SecurityQuestions.delete(id : Int)
+DELETE        /securityquestions/:id             @controllers.SecurityQuestions.delete(id : Int)
 
 
 
-GET           /suggestions/new              @controllers.Suggestions.newSuggestion()
+GET           /suggestions/new                   @controllers.Suggestions.newSuggestion()
 
-GET           /suggestions/                 @controllers.Suggestions.list(page: Int ?=0)
+GET           /suggestions/                      @controllers.Suggestions.list(page: Int ?=0)
 
-GET           /suggestions/:id              @controllers.Suggestions.details(id: Int)
+GET           /suggestions/:id                   @controllers.Suggestions.details(id: Int)
 
-POST          /suggestions/                 @controllers.Suggestions.save()
+POST          /suggestions/                      @controllers.Suggestions.save()
 
-DELETE        /suggestions/:id              @controllers.Suggestions.delete(id : Int)
+DELETE        /suggestions/:id                   @controllers.Suggestions.delete(id : Int)
 
 
 
-GET           /transactions/new             @controllers.Transactions.newTransaction()
+GET           /transactions/new                  @controllers.Transactions.newTransaction()
 
-GET           /transactions/                @controllers.Transactions.list(page: Int ?=0)
+GET           /transactions/                     @controllers.Transactions.list(page: Int ?=0)
 
-GET           /transactions/:id             @controllers.Transactions.details(id: Int)
+GET           /transactions/:id                  @controllers.Transactions.details(id: Int)
 
-POST          /transactions/                @controllers.Transactions.save()
+POST          /transactions/                     @controllers.Transactions.save()
 
-DELETE        /transactions/:id             @controllers.Transactions.delete(id : Int)
+DELETE        /transactions/:id                  @controllers.Transactions.delete(id : Int)
 
 
 
-GET           /users/new                    @controllers.Users.newUser()
+GET           /users/new                         @controllers.Users.newUser()
 
-GET           /users/                       @controllers.Users.list(page: Int ?=0)
+GET           /users/                            @controllers.Users.list(page: Int ?=0)
 
-GET           /users/:user                  @controllers.Users.details(user: models.User)
+GET           /users/:user                       @controllers.Users.details(user: models.User)
 
-POST          /users/                       @controllers.Users.save()
+POST          /users/                            @controllers.Users.save()
 
-DELETE        /users/delete/:user           @controllers.Users.delete(user : models.User)
+DELETE        /users/delete/:user                @controllers.Users.delete(user : models.User)
 
-GET           /users/picture/:id            @controllers.Users.picture(id: Int)
+GET           /users/picture/:id                 @controllers.Users.picture(id: Int)
 
-GET           /users/edit/:user             @controllers.Users.edit(user: models.User)
+GET           /users/edit/:user                  @controllers.Users.edit(user: models.User)
+
+GET           /users/forgotpasswordStep1/        @controllers.Users.forgotPasswordStep1()
+
+POST          /users/forgotpasswordStep2/        @controllers.Users.forgotPasswordStep2()
+
+POST          /users/forgotpassword/auth         @controllers.Users.forgotPasswordAuthenticator()
 
 
 

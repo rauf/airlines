@@ -88,13 +88,22 @@ public class User extends Model implements PathBindable<User> {
                 .eq("email",email)
                 .eq("password",password)
                 .findUnique();
-
     }
 
     public static User getUserByEmail(String email) {
         return find.where()
                 .eq("email",email)
                 .findUnique();
+    }
+
+    public static boolean userPresent(String email) {
+        User user = find.where()
+                    .eq("email",email)
+                    .findUnique();
+
+        if(user == null)
+            return false;
+        else return true;
     }
 
 
