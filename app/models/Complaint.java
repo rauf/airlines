@@ -13,6 +13,7 @@ import scala.collection.immutable.Page;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import java.util.Date;
 import java.util.List;
 
 
@@ -27,13 +28,10 @@ public class Complaint extends Model{
     @Constraints.Required
     public String description;
 
-    @Constraints.Required
-    public String date;
+    public Date date;
 
     @ManyToOne
     public User user;
-
-
 
 
     public static Finder<Long,Complaint> find = new Finder<>(Complaint.class);

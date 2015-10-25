@@ -19,20 +19,14 @@ public class Application extends Controller {
         Form<Login> boundForm = Form.form(Login.class).bindFromRequest();
         if(boundForm.hasErrors())
             return badRequest(login.render(boundForm));
-
-        Login loginObject = boundForm.get();
-
-        if(loginObject.validate() == null) {
+        else{
+            Login loginObject = boundForm.get();
             session().clear();
             session("email",loginObject.email);
             flash("loggedIn","You have successfully logged In");
             return ok(login.render(boundForm));                              // x redirect to home page
         }
 
-        else {
-            flash("logInError","Incorrect Email or Password");
-            return badRequest(login.render(boundForm));
-        }
     }
 
     public Result login() {

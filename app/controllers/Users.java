@@ -96,48 +96,34 @@ public class Users extends Controller {
         if(boundForm.hasErrors()){
             return badRequest(forgotPasswordStep1.render(boundForm));
         }
-        ForgotPasswordStep1 fp1object =boundForm.get();
+        else {
 
-        if(fp1object.validate() == null) {
+            User user = User.getUserByEmail(boundForm.get().email);
 
-            User user = User.getUserByEmail(fp1object.email);
+            ForgotPasswordStep2 fp2 = new ForgotPasswordStep2();
+            fp2.securityQuestion = user.securityQuestion.question;
+            fp2.securityAnswer="";
+            fp2.email = user.email;
 
-            ForgotPasswordStep2 fp = new ForgotPasswordStep2();
-            fp.securityQuestion = user.securityQuestion.question;           //filling just one field--securityQuestion
-            fp.securityAnswer="";
-            fp.email = user.email;
-            Form<ForgotPasswordStep2> filledForm = Form.form(ForgotPasswordStep2.class).fill(fp);         //fill the form when created otherwise it does not fills
-
+            Form<ForgotPasswordStep2> filledForm = Form.form(ForgotPasswordStep2.class).fill(fp2);
             return ok(forgotPasswordStep2.render(filledForm));
-
         }
-
-        else return badRequest(forgotPasswordStep1.render(boundForm));
     }
 
     public Result forgotPasswordAuthenticator() {
-        Form<ForgotPasswordStep2> form = Form.form(ForgotPasswordStep2.class);
-        Form<ForgotPasswordStep2> boundForm = form.bindFromRequest();
-
+        Form<ForgotPasswordStep2> boundForm = Form.form(ForgotPasswordStep2.class).bindFromRequest();
 
         if(boundForm.hasErrors()){
             return badRequest(forgotPasswordStep2.render(boundForm));
         }
-
-        ForgotPasswordStep2 fp = boundForm.get();
-
-        if(fp.validate() == null) {
-            String password = User.getUserByEmail(fp.email).password;
+        else  {
+            ForgotPasswordStep2 fp2 = boundForm.get();
+            String password = User.getUserByEmail(fp2.email).password;
             return ok(forgotPasswordResult.render(password));
-        }
-        else {
-            return badRequest(forgotPasswordStep2.render(boundForm));
-           // return ok("validation failed");
         }
     }
 
-    public Result picture(int id) {
-        User user = User.find.byId((long) id);
+    public Result picture(User user) {
         if(user == null)
             return notFound();
         return ok(user.picture);

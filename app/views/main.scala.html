@@ -38,6 +38,12 @@
                 @flash.get("loggedIn")
                 </div>
             }
+
+            @if(flash.containsKey("notLoggedIn")) {
+                <div class="alert alert-success">
+                @flash.get("notLoggedIn")
+                </div>
+            }
         @content
         </div>
 

@@ -20,6 +20,7 @@ public class User extends Model implements PathBindable<User> {
     @Id
     public Long id;
 
+    @Lob
     public byte[] picture;
 
     @Constraints.Required

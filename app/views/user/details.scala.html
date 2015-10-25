@@ -9,7 +9,7 @@
                    @if(user.picture == null || user.picture.isEmpty ){
                        <img class="img img-circle img-responsive" src="@routes.Assets.versioned("images/emptydp.jpg")">
                      }  else {
-                       <img src="@user.picture">}
+                       <img class="img img-circle img-responsive" src="@routes.Users.picture(user)">}
                 </div>
             </div>
 
@@ -44,7 +44,7 @@
                     <p><b>Date Of Birth</b></p>
                 </div>
                 <div class="col-md-6">
-                    <p>@user.dateOfBirth</p>
+                    <p>@user.dateOfBirth.format("dd-MM-yyyy")</p>
                 </div>
             </div>
 
@@ -87,7 +87,7 @@
                     <p><b>Security Question</b></p>
                 </div>
                 <div class="col-md-6">
-                    <p>@user.securityQuestion</p>
+                    <p>@user.securityQuestion.question</p>
                 </div>
             </div>
 
