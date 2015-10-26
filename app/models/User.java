@@ -41,14 +41,14 @@ public class User extends Model implements PathBindable<User> {
 
     public String addressLine2;
 
-   // @Constraints.Min(6)
+    // @Constraints.Min(6)
     //@Constraints.Max(6)
     public int pinCode;
 
     //@Constraints.Required
     public String contactNo;    // multivalued
 
-   // @Constraints.Required
+    // @Constraints.Required
     @Formats.DateTime(pattern = "yyyy-MM-dd")
     public Date dateOfBirth;
 
@@ -65,46 +65,60 @@ public class User extends Model implements PathBindable<User> {
     public List<Flight> flights;
 
     @OneToMany(mappedBy = "user")
-    public List<Transaction> transactions;
+    public List<Transactionn> transactionns;
 
     @OneToMany(mappedBy = "user")
-    public List<Complaint> complaints;
+    public List<ContactUs> contactUses;
 
-    public static Finder<Long,User> find = new Finder<>(User.class);
+    public static Finder<Long, User> find = new Finder<>(User.class);
 
-    public User(){
+    public User() {
         // left blank
     }
 
     //For Paging
-    public static PagedList<User> findPage(int page,int size) {
+    public static PagedList<User> findPage(int page, int size) {
         return find.where()
                 .orderBy("id asc")
                 .findPagedList(page, size);
 
     }
 
-    public static User getUser(String email, String password){
-        return   find.where()
-                .eq("email",email)
-                .eq("password",password)
-                .findUnique();
+    public static User getUser(String email, String password) {
+
+        User user = null;
+        try {
+            user = find.where()
+                    .eq("email", email)
+                    .eq("password", password)
+                    .findUnique();
+        } catch (Exception e) {
+            return null;
+        }
+        return user;
     }
 
     public static User getUserByEmail(String email) {
-        return find.where()
-                .eq("email",email)
-                .findUnique();
+        User user = null;
+        try {
+            user = find.where()
+                    .eq("email", email)
+                    .findUnique();
+        } catch (Exception e) {
+            return null;
+        }
+        return user;
     }
 
     public static boolean userPresent(String email) {
-        User user = find.where()
-                    .eq("email",email)
+        try {
+            User user = find.where()
+                    .eq("email", email)
                     .findUnique();
-
-        if(user == null)
+        } catch (Exception e) {
             return false;
-        else return true;
+        }
+        return true;
     }
 
 

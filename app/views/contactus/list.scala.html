@@ -1,0 +1,84 @@
+@import com.avaje.ebean.PagedList
+@(complaints: PagedList[ContactUs])
+
+@main("Contact Us") {
+
+    <div class="container">
+        <div class="col-md-10 col-md-offset-1 margin-top30">
+            <div class="panel">
+                <div class="panel-heading bg-primary">
+                    <div class="panel-title">
+                        <h4>Contact Us</h4>
+                    </div>
+                </div>
+
+                <div class="panel-body">
+
+                @if(complaints.getList.isEmpty) {
+                    <div class="margin-top20">
+                        <h3 class="col-md-offset-4 color-green">You haven't contacted us yet.</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-offset-5">
+                            <a href="@routes.ContactUss.newContact()"><u><h4>Contact Us</h4></u></a>
+                        </div>
+                    </div>
+                } else {
+                    <div class="margin-top30 ">
+                        <table class="table  table-striped">
+                            <thead >
+                                <tr class="bg-info">
+                                    <th>ContactUs Id</th>
+                                    <th>Date & Time</th>
+                                    <th>Subject</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @for(contactUs <- complaints.getList) {
+                                <tr>
+                                    <td>@contactUs.id</td>
+                                    <td>@contactUs.date.format("dd-MM-yyyy hh:mm:ss")</td>
+                                    <td>@contactUs.subject</td>
+                                    <td>@contactUs.description</td>
+                                </tr>
+                            }
+                            </tbody>
+                        </table>
+
+
+                        <div class="row">
+                            <nav>
+                                <ul class="pager">
+                                    <span class="">
+                                        @if(complaints.hasPrev) {
+                                                <li class="previous"><a href="@routes.ContactUss.list(complaints.getPageIndex - 1)"><span aria-hidden="true">&larr;</span>
+                                                    Older</a></li>
+                                        } else {
+                                            <li class="previous disabled"><a ><span aria-hidden="true">&larr;</span>
+                                                Older</a></li>                                        }
+                                    </span>
+
+                                    <li> @complaints.getDisplayXtoYofZ(" to ", " of ")</li>
+
+                                    <span class="">
+
+                                    @if(complaints.hasNext) {
+                                            <li class="next"><a href="@routes.ContactUss.list(complaints.getPageIndex + 1)">
+                                                Newer <span aria-hidden="true">&rarr;</span></a></li>
+                                    } else {
+                                        <li class="next disabled"><a>
+                                            Newer <span aria-hidden="true">&rarr;</span></a></li> }
+                                    </span>
+
+                                </ul>
+                            </nav>
+                        </div>
+
+                    </div>
+                }
+                </div>
+            </div>
+        </div>
+    </div>
+}

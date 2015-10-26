@@ -17,15 +17,15 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-public class Transaction extends Model {
+public class Transactionn extends Model {
 
     @Id
     public Long id;
 
-    @Constraints.Required
+    //@Constraints.Required
     public Airport from;
 
-    @Constraints.Required
+    //@Constraints.Required
     public Airport to;
 
     @Formats.DateTime(pattern = "dd-MM-yyyy")
@@ -42,14 +42,14 @@ public class Transaction extends Model {
     @ManyToMany
     public List<Passenger> passengers;
 
-    public static Finder<Long,Transaction> find = new Finder<>(Transaction.class);
+    public static Finder<Long, Transactionn> find = new Finder<>(Transactionn.class);
 
-    public Transaction(){
+    public Transactionn(){
         // left blank
     }
 
 
-    public static PagedList<Transaction> findPage(int page,int size) {
+    public static PagedList<Transactionn> findPage(int page,int size) {
         return find.where()
                 .orderBy("id asc")
                 .findPagedList(page,size);

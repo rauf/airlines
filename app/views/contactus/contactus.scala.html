@@ -1,6 +1,6 @@
-@(form : Form[Complaint])
+@(form : Form[ContactUs])
 
-@main("User Account") {
+@main("Contact Us") {
     <div class="container">
         <div class="col-md-10 col-md-offset-1 margin-top40">
             <div class="panel panel-primary margin-top70">
@@ -9,7 +9,7 @@
                 </div>
 
                 <div class="panel-body">
-                @helper.form(action = routes.Complaints.save()) {
+                @helper.form(action = routes.ContactUss.save()) {
 
                     <div class="row">
                         <input type="hidden" name="id" value="@form("id").valueOr("")"/>

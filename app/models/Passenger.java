@@ -33,7 +33,7 @@ public class Passenger extends Model{
     public String gender;
 
     @ManyToMany(mappedBy = "passengers")
-    public List<Transaction> transactions;
+    public List<Transactionn> transactionns;
 
     public static Finder<Long,Passenger> find = new Finder<>(Passenger.class);
 

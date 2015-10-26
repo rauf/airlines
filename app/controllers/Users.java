@@ -124,6 +124,7 @@ public class Users extends Controller {
     }
 
     public Result picture(User user) {
+
         if(user == null)
             return notFound();
         return ok(user.picture);

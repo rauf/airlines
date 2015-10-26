@@ -57,15 +57,15 @@ DELETE        /airports/:id                      @controllers.Airports.delete(id
 
 
 
-GET           /complaints/new                    @controllers.Complaints.newComplaint()
+GET           /contactuss/new                    @controllers.ContactUss.newContact()
 
-GET           /complaints/                       @controllers.Complaints.list(page: Int ?=0)
+GET           /contactuss/                       @controllers.ContactUss.list(page: Int ?=0)
 
-GET           /complaints/:id                    @controllers.Complaints.details(id: Int)
+GET           /contactuss/:id                    @controllers.ContactUss.details(id: Int)
 
-POST          /complaints/                       @controllers.Complaints.save()
+POST          /contactuss/                       @controllers.ContactUss.save()
 
-DELETE        /complaints/:id                    @controllers.Complaints.delete(id : Int)
+DELETE        /contactuss/:id                    @controllers.ContactUss.delete(id : Int)
 
 
 
@@ -146,15 +146,15 @@ DELETE        /securityquestions/:id             @controllers.SecurityQuestions.
 
 
 
-GET           /transactions/new                  @controllers.Transactions.newTransaction()
+GET           /transactionns/new                  @controllers.Transactionns.newTransaction()
 
-GET           /transactions/                     @controllers.Transactions.list(page: Int ?=0)
+GET           /transactionns/                     @controllers.Transactionns.list(page: Int ?=0)
 
-GET           /transactions/:id                  @controllers.Transactions.details(id: Int)
+GET           /transactionns/:id                  @controllers.Transactionns.details(id: Int)
 
-POST          /transactions/                     @controllers.Transactions.save()
+POST          /transactionns/                     @controllers.Transactionns.save()
 
-DELETE        /transactions/:id                  @controllers.Transactions.delete(id : Int)
+DELETE        /transactionns/:id                  @controllers.Transactionns.delete(id : Int)
 
 
 

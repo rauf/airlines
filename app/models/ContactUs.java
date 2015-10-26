@@ -8,23 +8,23 @@ package models;
 import com.avaje.ebean.Model;
 import com.avaje.ebean.PagedList;
 import play.data.validation.Constraints;
-import scala.collection.immutable.Page;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import java.util.Date;
-import java.util.List;
 
 
 @Entity
-public class Complaint extends Model{
+public class ContactUs extends Model{
 
     @Id
     public Long id;
 
-    public String topic;
+    public String subject;
 
+    @Lob
     @Constraints.Required
     public String description;
 
@@ -34,17 +34,16 @@ public class Complaint extends Model{
     public User user;
 
 
-    public static Finder<Long,Complaint> find = new Finder<>(Complaint.class);
+    public static Finder<Long, ContactUs> find = new Finder<>(ContactUs.class);
 
-    public Complaint(){
+    public ContactUs(){
         // left blank
     }
 
-    public static PagedList<Complaint> findPage(int page,int size) {
+    public  PagedList<ContactUs> findPage(int page,int size) {
         return find.where()
                 .orderBy("id asc")
                 .findPagedList(page,size);
-
     }
 
 
