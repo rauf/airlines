@@ -5,13 +5,13 @@ package controllers;
  */
 
 import com.avaje.ebean.PagedList;
-import com.typesafe.config.ConfigException;
 import models.Transaction;
 import play.data.Form;
 import play.mvc.Result;
 import play.mvc.Controller;
 import views.html.User.Transaction.newtransaction;
-import views.html.index;
+import views.html.User.Transaction.transactionredirect;
+
 
 import java.util.Date;
 
@@ -27,8 +27,8 @@ public class Transactions extends Controller{
 
     public Result list(int page) {
         PagedList<Transaction> list = Transaction.findPage(page, 10);
-        //return ok(list.render);
-        return TODO;
+        return ok(views.html.User.Transaction.list.render(list));
+
     }
 
     public Result newTransaction() {
@@ -47,7 +47,8 @@ public class Transactions extends Controller{
         Transaction transaction = form.get();
         transaction.date=date;
         transaction.amount=fare;
-        return ok(index.render(transaction.mode)); //needs updation
+        transaction.save();
+        return ok(transactionredirect.render()); //needs updation
 
 
     }
