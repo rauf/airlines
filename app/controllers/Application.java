@@ -5,12 +5,13 @@ import play.data.Form;
 import play.mvc.*;
 
 import views.html.*;
+import views.html.application.homepage;
 import views.html.application.login;
 
 public class Application extends Controller {
 
     public Result index() {
-        return ok(index.render("Your new application is ready."));
+        return ok(homepage.render());
     }
 
 
@@ -26,7 +27,6 @@ public class Application extends Controller {
             flash("loggedIn","You have successfully logged In");
             return ok(login.render(boundForm));                              // x redirect to home page
         }
-
     }
 
     public Result login() {
@@ -38,6 +38,5 @@ public class Application extends Controller {
         session().clear();
         return ok();                         //x redirect to homepage
     }
-
 
 }

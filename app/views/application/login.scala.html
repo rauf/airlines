@@ -14,14 +14,16 @@
                         <div class="panel-body">
                             @helper.form(action = routes.Application.authenticate()) {
                             <div class="row">
-                                <span class="col-md-10 col-md-offset-1">
-                                    <input type="text" name="email" placeholder="Enter your email address" class="form-control">
-                                </span>
+                                <div class="input-group col-md-10 col-md-offset-1">
+                                    <span class="input-group-addon" id="basic-addon1">@@</span>
+                                        <input type="text" name="email" placeholder="Enter your email address" class="form-control" aria-describedby="basic-addon1">
+                                </div>
                             </div>
-                            <div class="row margin-top30">
-                                <span class="col-md-10 col-md-offset-1">
-                                    <input type="password" name="password" placeholder="Enter your password" class="form-control" >
-                                </span>
+                            <div class=" row margin-top30">
+                                <div class="input-group col-md-10 col-md-offset-1">
+                                    <span class="input-group-addon" id="basic-addon2">*</span>
+                                    <input type="password" name="password" placeholder="Enter your password" class="form-control" aria-describedby="basic-addon2" >
+                                </div>
                             </div>
 
                                 <div class="col-md-5 col-md-offset-7">

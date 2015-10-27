@@ -32,7 +32,7 @@
                                     <th>Passengers</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody>@*
                             @for(transaction <- transcations.getList) {
                                 <tr>
                                     <td>@transaction.id</td>
@@ -43,7 +43,7 @@
                                     <td>@transaction.amount</td>
                                     <td><a href="#">Click here</a> </td>
                                 </tr>
-                            }
+                            }*@
                             </tbody>
                         </table>
 
