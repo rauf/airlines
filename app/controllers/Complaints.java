@@ -2,10 +2,8 @@ package controllers;
 
 import com.avaje.ebean.PagedList;
 import models.Complaint;
-import play.mvc.Result;
 import play.mvc.Controller;
-
-import java.util.List;
+import play.mvc.Result;
 
 /**
  * Created by abdul on 10/21/15.

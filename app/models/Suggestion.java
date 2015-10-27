@@ -10,7 +10,6 @@ import play.data.validation.Constraints;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.util.List;
 
 @Entity
 public class Suggestion extends Model{
@@ -27,7 +26,7 @@ public class Suggestion extends Model{
     public String date;
 
 
-    public static Finder<Long,Suggestion> find = new Finder<>(Suggestion.class);
+    public static Finder<Long, Suggestion> find = new Finder<>(Suggestion.class);
 
     public Suggestion(){
         // left blank

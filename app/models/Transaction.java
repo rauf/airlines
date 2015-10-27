@@ -6,8 +6,6 @@ package models;
 
 import com.avaje.ebean.Model;
 import com.avaje.ebean.PagedList;
-import play.data.format.Formats;
-import play.data.validation.Constraints;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -22,18 +20,15 @@ public class Transaction extends Model {
     @Id
     public Long id;
 
-    @Constraints.Required
-    public Airport from;
 
-    @Constraints.Required
-    public Airport to;
 
-    @Formats.DateTime(pattern = "dd-MM-yyyy")
-    public Date date;
 
-    public String modeOfPayment;
 
-    @Constraints.Required
+    public Date date=new Date();
+
+    public String mode;
+
+
     public int amount;
 
     @ManyToOne
@@ -42,7 +37,7 @@ public class Transaction extends Model {
     @ManyToMany
     public List<Passenger> passengers;
 
-    public static Finder<Long,Transaction> find = new Finder<>(Transaction.class);
+    public static Finder<Long, Transaction> find = new Finder<>(Transaction.class);
 
     public Transaction(){
         // left blank

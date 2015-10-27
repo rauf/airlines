@@ -8,12 +8,10 @@ package models;
 import com.avaje.ebean.Model;
 import com.avaje.ebean.PagedList;
 import play.data.validation.Constraints;
-import scala.collection.immutable.Page;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import java.util.List;
 
 
 @Entity
@@ -36,7 +34,7 @@ public class Complaint extends Model{
 
 
 
-    public static Finder<Long,Complaint> find = new Finder<>(Complaint.class);
+    public static Finder<Long, Complaint> find = new Finder<>(Complaint.class);
 
     public Complaint(){
         // left blank

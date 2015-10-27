@@ -6,7 +6,6 @@ package models;
 
 import com.avaje.ebean.Model;
 import com.avaje.ebean.PagedList;
-import play.data.validation.Constraints;
 
 import javax.persistence.*;
 import java.util.List;
@@ -30,7 +29,7 @@ public class Route extends Model {
 
 
 
-    public static Finder<Long,Route> find = new Finder<>(Route.class);
+    public static Finder<Long, Route> find = new Finder<>(Route.class);
 
 
 

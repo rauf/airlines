@@ -3,14 +3,11 @@ package controllers;
 /**
  * Created by abdul on 10/21/15.
  */
+
 import com.avaje.ebean.PagedList;
 import models.Admin;
-import models.Passenger;
-import play.mvc.Result;
 import play.mvc.Controller;
-
-
-import java.util.List;
+import play.mvc.Result;
 
 public class Admins extends Controller{
 
@@ -38,5 +35,4 @@ public class Admins extends Controller{
         return TODO;
     }
 
-dsf
 }

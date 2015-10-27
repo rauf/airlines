@@ -6,7 +6,6 @@ package models;
 
 import com.avaje.ebean.Model;
 import com.avaje.ebean.PagedList;
-import play.api.mvc.Result;
 import play.data.format.Formats;
 import play.data.validation.Constraints;
 
@@ -14,7 +13,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 public class Admin extends Model{
@@ -57,7 +55,7 @@ public class Admin extends Model{
     public SecurityQuestion securityQuestion;
 
 
-    public static Finder<Long,Admin> find = new Finder<>(Admin.class);
+    public static Finder<Long, Admin> find = new Finder<>(Admin.class);
 
     public Admin() {
         //left blank

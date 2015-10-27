@@ -6,13 +6,8 @@ package controllers;
 
 import com.avaje.ebean.PagedList;
 import models.Suggestion;
-import play.data.Form;
-import play.mvc.Result;
 import play.mvc.Controller;
-
-import views.html.index;
-
-import java.util.List;
+import play.mvc.Result;
 
 public class Suggestions extends Controller {
 

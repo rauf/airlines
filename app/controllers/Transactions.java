@@ -6,12 +6,22 @@ package controllers;
 
 import com.avaje.ebean.PagedList;
 import models.Transaction;
-import play.mvc.Result;
+import play.data.Form;
 import play.mvc.Controller;
+import play.mvc.Result;
+import views.html.User.Transaction.newtransaction;
+import views.html.index;
 
-import java.util.List;
+import java.util.Date;
+
 
 public class Transactions extends Controller{
+
+    public static int fare=0;
+    public static Date date;
+
+
+    Form<Transaction> transactionForm = Form.form(Transaction.class);
 
 
     public Result list(int page) {
@@ -21,7 +31,9 @@ public class Transactions extends Controller{
     }
 
     public Result newTransaction() {
-        return TODO;
+
+        return ok(newtransaction.render(transactionForm));
+
     }
 
     public Result details(int id) {
@@ -29,7 +41,14 @@ public class Transactions extends Controller{
     }
 
     public Result save() {
-        return TODO;
+
+        Form<Transaction> form = transactionForm.bindFromRequest();
+        Transaction transaction = form.get();
+        transaction.date=date;
+        transaction.amount=fare;
+        return ok(index.render(transaction.mode)); //needs updation
+
+
     }
 
     public Result delete(int id) {

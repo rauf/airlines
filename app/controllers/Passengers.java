@@ -6,12 +6,19 @@ package controllers;
 
 import com.avaje.ebean.PagedList;
 import models.Passenger;
-import play.mvc.Result;
+import models.UnrelatedEntity.PassengerList;
+import play.data.Form;
 import play.mvc.Controller;
+import play.mvc.Result;
+import views.html.User.Passenger.newpassenger;
+import views.html.User.Passenger.passengerredirect;
 
-import java.util.List;
 
 public class Passengers extends Controller {
+
+
+    public static int total_passenger;
+    Form<PassengerList> passengerForm = Form.form(PassengerList.class);
 
 
     public Result list(int page) {
@@ -21,7 +28,7 @@ public class Passengers extends Controller {
     }
 
     public Result newPassenger() {
-        return TODO;
+        return ok(newpassenger.render(passengerForm,total_passenger));
     }
 
     public Result details(int id) {
@@ -29,7 +36,28 @@ public class Passengers extends Controller {
     }
 
     public Result save() {
-        return TODO;
+
+
+       Form<PassengerList> form = passengerForm.bindFromRequest();
+        PassengerList passengerList = form.get();
+
+        for(int i=1;i<=total_passenger;i++)
+        {
+            Passenger passenger = new Passenger();
+            passenger.age=passengerList.age.get(i);
+            passenger.gender=passengerList.gender.get(i);
+            passenger.name=passengerList.name.get(i);
+
+            passenger.save();
+
+
+
+        }
+
+
+        return ok(passengerredirect.render());
+
+
     }
 
     public Result delete(int id) {

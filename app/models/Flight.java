@@ -51,7 +51,7 @@ public class Flight extends Model{
     public Route route;
 
 
-    public static Finder<Long,Flight> find = new Finder<>(Flight.class);
+    public static Finder<Long, Flight> find = new Finder<>(Flight.class);
 
     public Flight(){
         // left blank

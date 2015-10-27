@@ -62,7 +62,7 @@ public class User extends Model {
     @OneToMany(mappedBy = "user")
     public List<Complaint> complaints;
 
-    public static Finder<Long,User> find = new Finder<>(User.class);
+    public static Finder<Long, User> find = new Finder<>(User.class);
 
     public User(){
         // left blank

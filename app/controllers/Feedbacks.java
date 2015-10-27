@@ -3,14 +3,13 @@ package controllers;
 /**
  * Created by abdul on 10/21/15.
  */
+
 import com.avaje.ebean.PagedList;
 import models.UnrelatedEntity.Feedback;
 import play.data.Form;
-import play.mvc.Result;
 import play.mvc.Controller;
+import play.mvc.Result;
 import views.html.User.Feedback.newFeedback;
-import views.html.User.Feedback.feedbackredirect;
-
 
 
 public class Feedbacks extends Controller{
@@ -40,7 +39,7 @@ public class Feedbacks extends Controller{
 
 
         //flash("success",String.format("Thankyou for the feedback"));
-        return ok(feedbackredirect.render());
+        return ok(views.html.User.Feedback.feedbackredirect.render());
     }
 
     public Result delete(int id) {

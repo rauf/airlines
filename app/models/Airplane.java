@@ -2,7 +2,6 @@ package models;
 
 import com.avaje.ebean.Model;
 import com.avaje.ebean.PagedList;
-import play.data.validation.Constraints;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -23,7 +22,7 @@ public class Airplane extends Model {
     @ManyToMany(mappedBy = "airplanes")
     public List<Flight> flights;
 
-    public static Finder<Long,Airplane> find = new Finder<>(Airplane.class);
+    public static Finder<Long, Airplane> find = new Finder<>(Airplane.class);
 
 
     /**************************** ATTRIBUTES ************************************************/

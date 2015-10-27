@@ -7,10 +7,8 @@ package controllers;
 
 import com.avaje.ebean.PagedList;
 import models.SecurityQuestion;
-import play.mvc.Result;
 import play.mvc.Controller;
-
-import java.util.List;
+import play.mvc.Result;
 
 public class SecuityQuestions extends Controller {
 

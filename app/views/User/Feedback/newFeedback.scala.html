@@ -2,14 +2,31 @@
 
 
 
-@main("Suggestion Form"){
+@main("Feedback Form"){
+
+<div class="row">
+
+
+        <div class="col-md-2 col-sm-2"> <!-- required for floating -->
+            <!-- Nav tabs -->
+            <ul class="nav nav-pills tabs-left">
+                <li><a href="@routes.Passengers.newPassenger()">Passenger Form</a></li>
+                <li><a href="@routes.Application.index()" >Home Page</a></li>
+                <li><a href="@routes.FlightQuerys.newFlightQuery()">Find Flight</a></li>
+                <li><a href="@routes.Suggestions.newSuggestion()">Contact Us</a></li>
+                <li class="active"><a href="@routes.Feedbacks.newFeedback()">Give Us Your Feedback</a></li>
+                <li><a href="@routes.Transactions.newTransaction()">Transaction</a> </li>
+            </ul>
+        </div>
+
+
 
 
 
   <div class="container">
     <div class="panel panel-primary">
 
-      <div class="panel-heading text-center panelhead">Suggestion Form</div>
+      <div class="panel-heading text-center panelhead">Feedback Form</div>
 
       <div class="panel-body ">
 
@@ -22,25 +39,25 @@
           <div class="form-group">
 
             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-            <div class="col-md-8">
+            <div class="col-md-8 col-sm-8">
               <input id="@ContacUs("name").id" name="@ContacUs("name").name" type="text" placeholder="Name" class="form-control" data-validation="length" data-validation-length="min4">
 
             </div>
           </div>
 
-          <div class="form-group">
+          <div class="form-group" id="email1">
 
-            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
+            <span class="col-md-1 col-md-offset-2  text-center"><i class="fa fa-envelope-o bigicon"></i></span>
             <div class="col-md-8">
               <input id="email" name="@ContacUs("email").name" type="email" placeholder="Email Address" class="form-control" data-validation="email">
 
             </div>
           </div>
 
-          <div class="form-group">
+          <div class="form-group" id="email2">
 
-            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
-            <div class="col-md-8">
+            <span class="col-md-1 col-md-offset-2  text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
+            <div class="col-md-8 col-sm-8">
               <textarea name="@ContacUs("message").name" id="@ContacUs("message").id" rows="6" placeholder="Enter Your Message" class="form-control" data-validation="length" data-validation-length="min20"></textarea>
 
 
@@ -50,7 +67,7 @@
           <div class="form-group">
 
             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-star-o bigicon"></i></span>
-            <div class="col-md-8">
+            <div class="col-md-8 col-sm-8">
               <input type="hidden" name="@ContacUs("rating").name" class="rating" data-filled="fa fa-smile-o fa-2x" data-empty="fa fa-frown-o fa-2x"/>
 
 
@@ -59,7 +76,7 @@
 
 
           <div class="form-group">
-            <div class="col-md-offset-3 col-md-9">
+            <div class="col-md-offset-3 col-md-9 ">
 
               <input type="submit" class="btn btn-primary" value="submit">
               <input type="button" class="btn btn-danger" value="cancel" onclick="location.href='@routes.Application.index()';">
@@ -94,24 +111,51 @@
     </div>
   </div>
 
-    <style>
-    .header {
-    color: #36A0FF;
-    font-size: 27px;
-    padding: 10px;
-    }
-
-    .bigicon {
-    font-size: 35px;
-    color: #36A0FF;
-    }
+</div>
 
 
-  .panelhead {
-  font-size: 30px;
-  }
+<style>
 
-    </style>
+
+
+.header {
+color: #36A0FF;
+font-size: 27px;
+padding: 10px;
+}
+
+.bigicon {
+font-size: 35px;
+color: #36A0FF;
+}
+
+
+.panelhead {
+font-size: 30px;
+}
+
+#email1{
+
+margin-top: -140px;
+}
+
+#email2{
+
+margin-top: -90px;
+}
+
+
+
+</style>
+
+
+  <script>
+
+
+
+
+
+  </script>
 
 
 

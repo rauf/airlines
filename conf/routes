@@ -88,6 +88,20 @@ DELETE        /feedbacks/:id                @controllers.Feedbacks.delete(id : I
 
 
 
+GET           /flightQuerys/new                @controllers.FlightQuerys.newFlightQuery()
+
+GET           /flightQuerys/                   @controllers.FlightQuerys.list(page: Int ?=0)
+
+GET           /flightQuerys/:id                @controllers.FlightQuerys.details(id: Int)
+
+POST          /flightQuerys/                   @controllers.FlightQuerys.save()
+
+DELETE        /flightQuerys/:id                @controllers.FlightQuerys.delete(id : Int)
+
+
+
+
+
 GET           /flights/new                  @controllers.Flights.newFlight()
 
 GET           /flights/                     @controllers.Flights.list(page: Int ?=0)
