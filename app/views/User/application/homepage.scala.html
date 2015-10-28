@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+        <link href="@routes.Assets.versioned("bootstrap/css/bootstrap.min.css")" rel="stylesheet" media="screen">
+        <link lang="javascript" href="@routes.Assets.versioned("bootstrap/js/bootstrap.min.js")">
+        <link rel="stylesheet" href="@routes.Assets.versioned("fontawesome/css/font-awesome.min.css")">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="@routes.Assets.versioned("fontawesome/css/font-awesome-animation.min.css")">
+        <script src="@routes.Assets.versioned("jquery/jquery-ui.min.js")"></script>
+        <link rel="stylesheet" href="@routes.Assets.versioned("bootstrap-rating/bootstrap-rating.css")">
+        <script src="@routes.Assets.versioned("jquery/jquery-2.1.4.min.js")" type="text/javascript"> </script>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+        <link rel="stylesheet" href="@routes.Assets.versioned("form-validator/theme-default.css")" />
+        <script src="@routes.Assets.versioned("javascripts/hello.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("form-validator/jquery.form-validator.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("bootstrap-rating/bootstrap-rating.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("typeahead/dist/typeahead.jquery.js")"></script>
+        <script src="@routes.Assets.versioned("typeahead/dist/bloodhound.js")"></script>
+        <link rel="stylesheet" href="@routes.Assets.versioned("bootstrap/css/typeahead.css")">
+        <link rel="stylesheet" href="@routes.Assets.versioned("bootstraptouch/dist/jquery.bootstrap-touchspin.css")">
+        <link rel="stylesheet" href="@routes.Assets.versioned("bootstrap-verticaltabs/bootstrap.vertical-tabs.min.css")">
+        <script src="@routes.Assets.versioned("bootstraptouch/dist/jquery.bootstrap-touchspin.min.js")"></script>
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("jquery-slide/slick/slick.css")"/>
+        <link rel="stylesheet" href="@routes.Assets.versioned("jquery-ui/css/ui-lightness/jquery-ui-1.9.2.custom.min.css")">
+        <script src="@routes.Assets.versioned("jquery-ui/js/jquery-ui-1.9.2.custom.min.js")"></script>
+
+    </head>
+
+
+    <body>
+        <div class="container-fluid homepage-pic">
+            @navbar()
+
+            <div class="row margin-top300">
+                <div class="col-md-6 text-center col-centred">
+                    <h1 class="bold-text">WELCOME TO THE A4 WEBSITE. HOPE YOU ENJOY</h1>
+                    <a href="@routes.FlightQuerys.newFlightQuery()"><input type="button" class="btn btn-lg flight-button margin-top10 " value="Query Flight"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="background-purple">
+            <div class="row">
+                <div class="col-md-6 text-center col-centred">
+                    <h1 class="small-text margin-top100">Redefining the art of flight</h1>
+                    <h3 class="small-text">Enjoy luxurious travel with our Middle Eastern hospitality and 5-star service, exclusively tailored to meet your travel needs onboard. Relish extraordinary cuisine designed by award-winning chefs, choose over 1000 entertainment options.</h3>
+                </div>
+                <div class="margin-top100">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="margin-top100">
+                <div class="text-center ">
+                    <h1 >At your service</h1>
+                </div>
+            </div>
+        <div class="container">
+            <div class="row margin-top30">
+                <div class="col-md-3">
+                    <img class="img-responsive img-rounded" src="@routes.Assets.versioned("images/seats.jpg")">
+                </div>
+                <div class="col-md-3 col-md-offset-1">
+                    <img class="img-responsive img-rounded" src="@routes.Assets.versioned("images/booking.jpg")">
+                </div>
+                <div class="col-md-3 col-md-offset-1">
+                    <img class="img-responsive img-rounded" src="@routes.Assets.versioned("images/phone.jpg")">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <h3 class="text-center">More routes. More flights</h3>
+                </div>
+
+                <div class="col-md-3 col-md-offset-1">
+                    <h3 class="text-center">Manage bookings easily</h3>
+                </div>
+
+                <div class="col-md-3 col-md-offset-1">
+                    <h3 class="text-center">Stay updated in the air with our in-flight connectivity</h3>
+                </div>
+            </div>
+        <div class="margin-top30">
+
+        </div>
+        </div>
+
+
+
+        </div>
+
+
+        @footer()
+
+        <script>
+             jQuery(document).ready(function($) {
+      $('.homepage-pic')
+      .height($(window).height());
+        });
+
+        </script>
+
+
+</body>
+    </html>

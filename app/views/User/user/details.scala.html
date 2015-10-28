@@ -1,0 +1,118 @@
+@(user:User)
+
+@main("User Details") {
+
+    <div class="container">
+        <div class="col-md-10 col-md-offset-1 well margin-top40">
+            <div class="row margin-top40">
+                <div class="col-md-4 col-md-offset-4 col-centred">
+                   @if(user.picture == null || user.picture.isEmpty ){
+                       <img class="img img-circle img-responsive" src="@routes.Assets.versioned("images/emptydp.jpg")">
+                     }  else {
+                       <img class="img img-circle img-responsive" src="@routes.Users.picture(user)">}
+                </div>
+            </div>
+
+            <div class="row margin-top20">
+                <div class="col-md-2 col-md-offset-2">
+                    <p><b>Name</b></p>
+                </div>
+                <div class="col-md-6">
+                    <p>@user.name</p>
+                </div>
+            </div>
+
+            <div class="row margin-top20">
+                <div class="col-md-2 col-md-offset-2">
+                    <p><b>E-mail Address</b></p>
+                </div>
+                <div class="col-md-6">
+                    <p>@user.email</p>
+                </div>
+            </div>
+            <div class="row margin-top20">
+                <div class="col-md-2 col-md-offset-2">
+                    <p><b>Gender</b></p>
+                </div>
+                <div class="col-md-6">
+                    <p>@user.gender</p>
+                </div>
+            </div>
+
+            <div class="row margin-top20">
+                <div class="col-md-2 col-md-offset-2">
+                    <p><b>Date Of Birth</b></p>
+                </div>
+                <div class="col-md-6">
+                    <p>@user.dateOfBirth.format("dd-MM-yyyy")</p>
+                </div>
+            </div>
+
+            <div class="row margin-top20">
+                <div class="col-md-2 col-md-offset-2">
+                    <p><b>Address</b></p>
+                </div>
+                <div class="col-md-6">
+                    <p>@user.addressLine1</p>
+                </div>
+            </div>
+
+            <div class="row margin-top10">
+
+                <div class="col-md-6 col-md-offset-4">
+                    <p>@user.addressLine2</p>
+                </div>
+            </div>
+
+            <div class="row margin-top20">
+                <div class="col-md-2 col-md-offset-2">
+                    <p><b>PinCode</b></p>
+                </div>
+                <div class="col-md-6">
+                    <p>@user.pinCode</p>
+                </div>
+            </div>
+
+            <div class="row margin-top20">
+                <div class="col-md-2 col-md-offset-2">
+                    <p><b>Contact Number</b></p>
+                </div>
+                <div class="col-md-6">
+                    <p>@user.contactNo</p>
+                </div>
+            </div>
+
+            <div class="row margin-top20">
+                <div class="col-md-2 col-md-offset-2">
+                    <p><b>Security Question</b></p>
+                </div>
+                <div class="col-md-6">
+                    <p>@user.securityQuestion.question</p>
+                </div>
+            </div>
+
+            <div class="row margin-top20">
+                <div class="col-md-2 col-md-offset-2">
+                    <p><b>Security Answer</b></p>
+                </div>
+                <div class="col-md-6">
+                    <p>@user.securityAnswer</p>
+                </div>
+            </div>
+
+            <div class="row margin-top40">
+                <div class="col-md-4 col-md-offset-4">
+                    <a href="@routes.Users.edit(user)" ><input type="button" class="btn btn-block btn-warning" value="Edit"></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $('body').addClass('background-pic');
+        });
+    </script>
+
+}

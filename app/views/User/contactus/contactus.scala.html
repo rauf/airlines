@@ -1,0 +1,59 @@
+@(form : Form[ContactUs])
+
+@main("Contact Us") {
+    <div class="container">
+        <div class="col-md-10 col-md-offset-1 margin-top40">
+            <div class="panel panel-primary margin-top70">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Contact Us</h3>
+                </div>
+
+                <div class="panel-body">
+                @helper.form(action = routes.ContactUss.save()) {
+
+                    <div class="row">
+                        <input type="hidden" name="id" value="@form("id").valueOr("")"/>
+                    </div>
+
+                    <div class="row margin-top40">
+                        <div class="col-md-2 col-md-offset-2 ">
+                            <label><b>Subject </b></label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" name="subject" value="@form("subject").valueOr("")" class="form-control"  />
+                        </div>
+                    </div>
+
+                    <div class="row margin-top20">
+                        <div class="col-md-2 col-md-offset-2">
+                            <p><b>Description</b></p>
+                        </div>
+                        <div class="col-md-6">
+                            <textarea type="email" name="description" value="@form("description").valueOr("")" class="form-control" rows="5" style="resize: vertical"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="row margin-top40">
+
+                        <div class="col-md-4 col-md-offset-4">
+                            <input type="submit" class="btn  btn-primary" value="Submit" />
+                        </div>
+                    </div>
+
+                    <div class="margin-top40">
+
+                    </div>
+
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $('body').addClass('background-pic');
+        });
+    </script>
+
+}

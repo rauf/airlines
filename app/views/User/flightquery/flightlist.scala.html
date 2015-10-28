@@ -1,0 +1,58 @@
+@import com.avaje.ebean.SqlRow
+@(list:List[SqlRow])
+
+  @main("Flight list"){
+
+
+  <div class="row">
+    <div class="col-md-2"> <!-- required for floating -->
+      <!-- Nav tabs -->
+      <ul class="nav nav-pills tabs-left">
+        <li><a href="@routes.Passengers.newPassenger()">Passenger Form</a></li>
+        <li><a href="@routes.Application.index()" >Home Page</a></li>
+        <li class="active"><a href="@routes.FlightQuerys.newFlightQuery()">Find Flight</a></li>
+        <li><a href="@routes.Suggestions.newSuggestion()">Contact Us</a></li>
+        <li ><a href="@routes.Feedbacks.newFeedback()">Give Us Your Feedback</a></li>
+        <li><a href="@routes.Transactionns.newTransaction()">Transactionn</a> </li>
+      </ul>
+    </div>
+
+
+
+
+  <div class="container">
+    <h2>Flight list</h2>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Flight ID</th>
+          <th>Flight Registration_no</th>
+          <th>Flight type</th>
+          <th>Source</th>
+          <th>Destination</th>
+          <th>Depart Date</th>
+        </tr>
+      </thead>
+      <tbody>
+      @for(flightlist <- list) {
+
+
+        <tr>
+          <td><a href="#"> @flightlist.getLong("id")</a></td>
+          <td> @flightlist.getString("reg_no")</td>
+          <td> @flightlist.getString("type")</td>
+          <td> @flightlist.getString("source")</td>
+          <td> @flightlist.getString("destination")</td>
+          <td> @flightlist.getDate("depart_date")</td>
+        </tr>
+      }
+      </tbody>
+    </table>
+    </div>
+
+</div>
+
+
+
+}

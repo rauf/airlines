@@ -1,0 +1,73 @@
+@main("Redirecting"){
+
+  <div class="container">
+
+<div id="first" align="center">
+    <h3 align="text-center"> Please Wait While We Confirm the Transactionn</h3>
+    <div align="center"> <span> <i class="faa-flash animated fa fa-exclamation-triangle fa-4x" ></i> </span></div></div>
+    <div id="last" align="center">
+      <div align="center"> <span> <i class="  faa-burst animated fa fa-check-circle fa-5x" id="first"></i> </span></div>
+      <h3 align="text-center">Successful</h3>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  <script>
+
+
+     $(function(){
+
+     var delay1 = 3000;
+
+$('#last').hide();
+
+setTimeout(function(){
+$('#first').hide();
+$('#last').show();
+},delay1)
+
+
+
+
+
+
+
+var delay = 7000; //Your delay in milliseconds
+
+setTimeout(function(){
+ window.location = '@routes.Passengers.newPassenger()';
+ }, delay);
+
+
+
+
+
+
+
+
+     });
+
+
+
+
+
+
+
+
+ </script>
+
+
+
+
+}

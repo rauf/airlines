@@ -1,0 +1,75 @@
+.margin-top10 {
+    margin-top: 10px;
+}
+.margin-top20{
+    margin-top: 20px;
+}
+.margin-top30 {
+    margin-top:30px;
+}
+.margin-top40 {
+    margin-top:40px;
+}
+.margin-top70{
+    margin-top: 70px;
+}
+.margin-top100{
+    margin-top: 100px;
+}
+.margin-top150{
+    margin-top: 150px;
+}
+.margin-top200{
+    margin-top:200px;
+}
+.margin-top300{
+    margin-top:300px;
+}
+.margin-top400{
+    margin-top:400px;
+}
+.background-pic {
+    background:url("../images/planebg.jpg");
+    background-size: cover;
+    min-height: 100%;
+}
+.col-centred {
+    float: none;
+    margin: 0 auto;
+}
+.color-green {
+    color: forestgreen;
+}
+.nav {
+    padding: 8px;
+    background-color: #7E57C2;
+}
+.nav>ul{
+    list-style-type: none;
+}
+.nav>ul>li{
+    color: white;
+    font-size: large;
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    display: inline;
+}
+.homepage-pic {
+    background: url("../images/homepage.jpg");
+    background-size: cover;
+}
+.bold-text {
+    font-size: 55px;
+    font-weight: bolder;
+    color: white;
+}
+.small-text {
+    color: white;
+}
+.background-purple {
+    background-color: #7E57C2;
+}
+.flight-button {
+    color: white;
+    background-color: #7E57C2;
+    border-radius: 20px;
+}
