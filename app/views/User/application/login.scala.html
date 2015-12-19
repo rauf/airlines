@@ -1,0 +1,73 @@
+@import models.NotEntities.Login
+@(form:Form[Login])
+
+@main("Log In") {
+
+    <div class="container-fluid">
+        <div class="">
+            <div class="row row-centred margin-top300">
+                <div class="col-md-3 col-centred ">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h4>Sign In!</h4>
+                        </div>
+                        <div class="panel-body">
+                            @helper.form(action = routes.Application.authenticate()) {
+                            <div class="row">
+                                <div class="input-group col-md-10 col-md-offset-1">
+                                    <span class="input-group-addon" id="basic-addon1">@@</span>
+                                        <input type="text" name="email" placeholder="Enter your email address" class="form-control" aria-describedby="basic-addon1">
+                                </div>
+                            </div>
+                            <div class=" row margin-top30">
+                                <div class="input-group col-md-10 col-md-offset-1">
+                                    <span class="input-group-addon" id="basic-addon2">*</span>
+                                    <input type="password" name="password" placeholder="Enter your password" class="form-control" aria-describedby="basic-addon2" >
+                                </div>
+                            </div>
+
+                                <div class="col-md-5 col-md-offset-7">
+                                    <a href="@routes.Users.forgotPasswordStep1()"><u>Forgot Password?</u></a>
+                                </div>
+
+                                <div class="row margin-top30">
+                                    <div class="col-md-8 col-md-offset-2">
+                                    @if(form.hasGlobalErrors) {
+                                        <div class="error">
+                                        <font color="#8b0000"><b>@form.globalError.message</b></font>
+                                        </div>}
+                                    </div>
+                                </div>
+
+                            <div class="row text-center margin-top20">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <input type="submit" value="Log In" class="btn btn-primary btn-block" >
+                                </div>
+                            </div>
+                        </div>
+                        }
+
+                        <div class="row text-center margin-top30">
+                            <a href="@routes.Users.newUser()">
+                                <h5><u>Don't have an account? Sign Up.</u></h5>
+                            </a>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        $(document).ready(function(){
+            $('#body').addClass('background-pic');
+        });
+    </script>
+
+}

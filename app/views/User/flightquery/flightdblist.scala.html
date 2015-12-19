@@ -1,0 +1,89 @@
+@import com.avaje.ebean.PagedList
+@(passengers: PagedList[FlightQuery])
+
+@main("Flight Query List") {
+
+  <div class="container">
+    <div class="col-md-10 col-md-offset-1 margin-top30">
+      <div class="panel">
+        <div class="panel-heading bg-primary">
+          <div class="panel-title" align="center">
+            <h4>Flight Query</h4>
+          </div>
+        </div>
+
+        <div class="panel-body">
+
+        @if(passengers.getList.isEmpty) {
+          <div class="margin-top20">
+            <h3 class="col-md-offset-4 color-green">You do not have any Flight Query</h3>
+          </div>
+        } else {
+          <div class="margin-top30 ">
+            <table class="table  table-striped">
+              <thead >
+                <tr class="bg-info">
+                  <th>Id</th>
+                  <th>Source</th>
+                  <th>Destination</th>
+                  <th>Depart Date</th>
+                  <th>Adults</th>
+                  <th>Child</th>
+                  <th>Infants</th>
+
+
+                </tr>
+              </thead>
+              <tbody>
+              @for(transactionn <- passengers.getList) {
+                <tr>
+                  <td>@transactionn.id</td>
+                  <td>@transactionn.source</td>
+                  <td>@transactionn.destination</td>
+                  <td>@transactionn.depart_date</td>
+                  <td>@transactionn.adult</td>
+                  <td>@transactionn.children</td>
+                  <td>@transactionn.infant</td>
+
+
+                </tr>
+              }
+              </tbody>
+            </table>
+
+
+            <div class="row">
+              <nav>
+                <ul class="pager">
+                  <span class="">
+                  @if(passengers.hasPrev) {
+                    <li class="previous"><a href="@routes.FlightQuerys.details(passengers.getPageIndex - 1)"><span aria-hidden="true">&larr;</span>
+                      Older</a></li>
+                  } else {
+                    <li class="previous disabled"><a ><span aria-hidden="true">&larr;</span>
+                      Older</a></li>                                        }
+                  </span>
+
+                  <li> @passengers.getDisplayXtoYofZ(" to ", " of ")</li>
+
+                  <span class="">
+
+                  @if(passengers.hasNext) {
+                    <li class="next"><a href="@routes.FlightQuerys.details(passengers.getPageIndex + 1)">
+                      Newer <span aria-hidden="true">&rarr;</span></a></li>
+                  } else {
+                    <li class="next disabled"><a>
+                      Newer <span aria-hidden="true">&rarr;</span></a></li> }
+                  </span>
+
+                </ul>
+              </nav>
+            </div>
+
+          </div>
+        }
+        </div>
+      </div>
+    </div>
+  </div>
+}

@@ -1,0 +1,16 @@
+<div class="container-fluid nav1">
+    <ul>
+        <a href="@routes.Application.index()"> <img src="@routes.Assets.versioned("images/plane-icon.png")" alt="plane icon" width="35px" height="35px"/></a>
+        <li> <a href="@routes.Application.index()">   A4 Airlines </a> </li>
+
+        @if(session().get("email") == null) {
+            <li class="nav1-right"> <a href="@routes.Application.login()">  Login  </a> </li>
+        } else {
+            <li class="nav1-right"><a href="@routes.Application.logout()">  Logout </a> </li>
+            <li class="nav1-right"><a href="@routes.Users.details(models.User.getUserByEmail(session().get("email")))">@models.User.getUserByEmail(session().get("email")).name </a> </li>
+        }
+
+        <li class="nav1-right"> <a href="@routes.ContactUss.newContact()"> Contact Us </a> </li>
+        <li class="nav1-right"> <a href="@routes.FlightQuerys.newFlightQuery()"> Flight Query </a> </li>
+    </ul>
+</div>

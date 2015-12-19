@@ -1,0 +1,213 @@
+# Routes
+# This file defines all application routees (Higher priority routees first)
+# ~~~~
+
+# Home page
+GET           /                                  @controllers.Application.index()
+
+# Map static resources from the /public folder to the /assets URL path
+GET           /assets/*file                      @controllers.Assets.versioned(path="/public", file: Asset)
+
+
+
+GET           /login                             @controllers.Application.login()
+
+GET           /logout                            @controllers.Application.logout()
+
+POST          /authenticate                      @controllers.Application.authenticate()
+
+
+
+
+
+
+GET           /admins/new                        @controllers.Admins.newAdmin()
+
+GET           /admins/                           @controllers.Admins.list(page: Int ?=0)
+
+GET           /admins/:id                        @controllers.Admins.details(id: Int)
+
+POST          /admins/                           @controllers.Admins.save()
+
+DELETE        /admins/:id                        @controllers.Admins.delete(id : Int)
+
+
+
+
+GET           /airplanes/new                     @controllers.Airplanes.newAirplane()
+
+GET           /airplanes/                        @controllers.Airplanes.list(page: Int ?=0)
+
+GET           /airplanes/:id                     @controllers.Airplanes.details(id: Int)
+
+POST          /airplanes/                        @controllers.Airplanes.save()
+
+DELETE        /airplanes/:id                     @controllers.Airplanes.delete(id : Int)
+
+
+
+
+GET           /airports/new                      @controllers.Airports.newAirport()
+
+GET           /airports/                         @controllers.Airports.list(page: Int ?=0)
+
+GET           /airports/:id                      @controllers.Airports.details(id: Int)
+
+POST          /airports/                         @controllers.Airports.save()
+
+DELETE        /airports/:id                      @controllers.Airports.delete(id : Int)
+
+
+
+
+GET           /contactuss/new                    @controllers.ContactUss.newContact()
+
+GET           /contactuss/                       @controllers.ContactUss.list(page: Int ?=0)
+
+GET           /contactuss/:id                    @controllers.ContactUss.details(id: Int)
+
+POST          /contactuss/                       @controllers.ContactUss.save()
+
+DELETE        /contactuss/:id                    @controllers.ContactUss.delete(id : Int)
+
+
+
+
+
+
+GET           /fares/new                         @controllers.Fares.newFare()
+
+GET           /fares/                            @controllers.Fares.list(page: Int ?=0)
+
+GET           /fares/:id                         @controllers.Fares.details(id: Int)
+
+POST          /fares/                            @controllers.Fares.save()
+
+DELETE        /fares/:id                         @controllers.Fares.delete(id : Int)
+
+
+
+
+GET           /feedbacks/new                     @controllers.Feedbacks.newFeedback()
+
+GET           /feedbacks/                        @controllers.Feedbacks.list(page: Int ?=0)
+
+GET           /feedbacks/:id                     @controllers.Feedbacks.details(id: Int)
+
+POST          /feedbacks/                        @controllers.Feedbacks.save()
+
+DELETE        /feedbacks/:id                     @controllers.Feedbacks.delete(id : Int)
+
+
+
+
+GET           /flightQuerys/new                  @controllers.FlightQuerys.newFlightQuery()
+
+GET           /flightQuerys/                     @controllers.FlightQuerys.list(page: Int ?=0)
+
+GET           /flightQuerys/details/list         @controllers.FlightQuerys.details(page: Int ?=0)
+
+POST          /flightQuerys/                     @controllers.FlightQuerys.save()
+
+DELETE        /flightQuerys/:id                  @controllers.FlightQuerys.delete(id : Int)
+
+
+
+
+
+GET           /flights/new                       @controllers.Flights.newFlight()
+
+GET           /flights/                          @controllers.Flights.list(page: Int ?=0)
+
+GET           /flights/:id                       @controllers.Flights.details(id: Int)
+
+POST          /flights/                          @controllers.Flights.save()
+
+DELETE        /flights/:id                       @controllers.Flights.delete(id : Int)
+
+
+
+GET           /passengers/new                    @controllers.Passengers.newPassenger()
+
+GET           /passengers/                       @controllers.Passengers.list(page: Int ?=0)
+
+GET           /passengers/:id                    @controllers.Passengers.details(id: Int)
+
+POST          /passengers/                       @controllers.Passengers.save()
+
+DELETE        /passengers/:id                    @controllers.Passengers.delete(id : Int)
+
+
+
+
+GET           /routees/new                        @controllers.Routees.newRoute()
+
+GET           /routees/                           @controllers.Routees.list(page: Int ?=0)
+
+GET           /routees/:id                        @controllers.Routees.details(id: Int)
+
+POST          /routees/                           @controllers.Routees.save()
+
+DELETE        /routees/:id                        @controllers.Routees.delete(id : Int)
+
+
+
+
+GET           /securityquestions/new             @controllers.SecurityQuestions.newQuestion()
+
+GET           /securityquestions/                @controllers.SecurityQuestions.list(page: Int ?=0)
+
+GET           /securityquestions/:id             @controllers.SecurityQuestions.details(id: Int)
+
+POST          /securityquestions/                @controllers.SecurityQuestions.save()
+
+DELETE        /securityquestions/:id             @controllers.SecurityQuestions.delete(id : Int)
+
+
+
+GET           /suggestion/new                    @controllers.Suggestions.newSuggestion()
+
+
+
+
+
+GET           /transactionns/new             @controllers.Transactionns.newTransaction()
+
+GET           /transactionns/                @controllers.Transactionns.list(page: Int ?=0)
+
+GET           /transactionns/:id             @controllers.Transactionns.details(id: Int)
+
+POST          /transactionns/                @controllers.Transactionns.save()
+
+DELETE        /transactionns/:id             @controllers.Transactionns.delete(id : Int)
+
+
+
+
+
+
+
+
+GET           /users/new                         @controllers.Users.newUser()
+
+GET           /users/                            @controllers.Users.list(page: Int ?=0)
+
+GET           /users/:user                       @controllers.Users.details(user: models.User)
+
+POST          /users/                            @controllers.Users.save()
+
+DELETE        /users/delete/:user                @controllers.Users.delete(user : models.User)
+
+GET           /users/picture/:user               @controllers.Users.picture(user: models.User)
+
+GET           /users/edit/:user                  @controllers.Users.edit(user: models.User)
+
+GET           /users/forgotpasswordStep1/        @controllers.Users.forgotPasswordStep1()
+
+POST          /users/forgotpasswordStep2/        @controllers.Users.forgotPasswordStep2()
+
+POST          /users/forgotpassword/auth         @controllers.Users.forgotPasswordAuthenticator()
+
+
+
+

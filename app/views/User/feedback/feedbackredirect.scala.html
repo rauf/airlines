@@ -1,0 +1,38 @@
+@main("Redirecting"){
+
+    <div class="well" align="center">
+
+        <span> <i class="faa-passing animated fa fa-thumbs-o-up fa-4x"></i> </span>
+        <h2 align="center">Your Feedback have been successfully submited . Thankyou </h2>
+
+
+
+    </div>
+
+    <img src="@routes.Assets.versioned("images/dreamline.jpg")" height="770px" width="1920px" id="image">
+
+
+
+
+ <script>
+
+     var delay = 5000; //Your delay in milliseconds
+
+setTimeout(function(){
+ window.location = '@routes.Application.index()';
+ }, delay);
+
+
+          $("#image").toggle("slide", { direction: "right" }, 5000);
+
+
+
+
+
+
+ </script>
+
+
+
+
+}

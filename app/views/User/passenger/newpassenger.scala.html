@@ -1,0 +1,177 @@
+
+@(ContacUs:Form[models.UnrelatedEntity.PassengerList],total_passenger:Integer)
+
+@main("Passenger Form"){
+
+
+<div class="row">
+
+  <div class="col-md-2"> <!-- required for floating -->
+    <!-- Nav tabs -->
+    <ul class="nav nav-pills tabs-left">
+      <li class="active"><a href="@routes.Passengers.newPassenger()">Passenger Form</a></li>
+      <li><a href="@routes.Application.index()" >Home Page</a></li>
+      <li><a href="@routes.FlightQuerys.newFlightQuery()">Find Flight</a></li>
+      <li><a href="@routes.Suggestions.newSuggestion()">Contact Us</a></li>
+      <li><a href="@routes.Feedbacks.newFeedback()">Give Us Your Feedback</a></li>
+      <li><a href="@routes.Transactionns.newTransaction()">Transactionn</a> </li>
+    </ul>
+  </div>
+
+<div class="col-md-6">
+  <div class="container well">
+
+  @helper.form(action = routes.Passengers.save() , 'class->"form-horizontal") {
+
+    @for(i <- 1 to total_passenger){
+
+      <legend class="text-center text-success">Passenger @i Details"</legend>
+      <div class="form-group">
+
+        <label class=" col-md-offset-1 col-md-1 control-label">Name</label>
+        <div class="col-md-9">
+          <input type="text" class="form-control" name="@ContacUs("name["+i+"]").name" data-validation="length" data-validation-length="min3">
+        </div>
+      </div>
+
+      <div class="row ">
+
+
+
+
+        <div class="form-group col-md-6">
+
+          <label class="col-md-3 control-label" id="age">Age</label>
+          <div class="col-md-9">
+            <input type="number" class="form-control" name="@ContacUs("age["+i+"]").name" data-validation="number">
+          </div>
+        </div>
+
+        <div class="form-group col-md-6">
+
+          <label class="col-md-3 control-label">Gender</label>
+          <div class="col-md-9">
+            <select type="text" class="form-control" name="@ContacUs("gender["+i+"]").name">
+              <option>Male</option>
+              <option>Female</option>
+
+            </select>
+          </div>
+
+        </div>
+
+
+
+
+
+      </div>
+
+      <legend></legend>
+
+    }
+
+
+
+
+    <div class="form-group">
+      <div class=" col-md-offset-1 col-md-9">
+
+        <input type="submit" class="btn btn-success" value="Finish" id="submit">
+
+        <input type="button" class="btn btn-danger" value="cancel" onclick="location.href='@routes.Application.index()';" id="cancel">
+
+      </div>
+    </div>
+
+  }
+
+
+  </div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+  <div class="col-md-offset-2 col-md-2"> <!-- required for floating -->
+    <!-- Nav tabs -->
+
+    <h3>Customer feedback</h3>
+
+
+    <blockquote>
+      <p>Super Fast Website for airline booking <i class="fa fa-thumbs-up fa-2x"></i>
+      </p>
+      <footer>
+        user 1
+      </footer>
+    </blockquote>
+
+    <blockquote>
+      <p>
+        Website takes some time to load    <i class="fa fa-thumbs-down fa-2x"></i>
+      </p>
+      <footer>
+        user qwe
+      </footer>
+    </blockquote>
+
+
+    <blockquote>
+      <p>
+        Customer Service is very fast and responsive  <i class="fa fa-thumbs-up fa-2x"></i>
+      </p>
+      <footer>
+        user 2
+      </footer>
+    </blockquote>
+
+
+
+
+    <blockquote>
+      <p>
+        Got instant money after ticket Cancellation , 100% recommended <i class="fa fa-smile-o fa-2x"></i>
+      </p>
+      <footer>
+        user abc
+      </footer>
+    </blockquote>
+
+
+
+  </div>
+
+</div>
+
+
+
+
+
+
+<style>
+
+
+
+  .row.well{
+    background-color: #ff9089 ;
+  }
+
+
+</style>
+
+
+
+
+
+
+
+}
+

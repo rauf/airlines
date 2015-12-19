@@ -1,0 +1,81 @@
+@import com.avaje.ebean.PagedList
+@(transcations: PagedList[Transactionn])
+
+@main("User Transactionns") {
+
+    <div class="container">
+        <div class="col-md-10 col-md-offset-1 margin-top30">
+            <div class="panel">
+                <div class="panel-heading bg-primary">
+                    <div class="panel-title" align="center">
+                        <h4>Your Transactionns</h4>
+                    </div>
+                </div>
+
+                <div class="panel-body">
+
+                @if(transcations.getList.isEmpty) {
+                    <div class="margin-top20">
+                        <h3 class="col-md-offset-4 color-green">You do not have any Transactionns</h3>
+                    </div>
+                } else {
+                    <div class="margin-top30 ">
+                        <table class="table  table-striped">
+                            <thead >
+                                <tr class="bg-info">
+                                    <th>Transactionn Id</th>
+                                    <th>Transactionn Mode</th>
+                                    <th>Transactionn date</th>
+                                    <th>Transactionn amount</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @for(transactionn <- transcations.getList) {
+                                <tr>
+                                    <td>@transactionn.id</td>
+                                    <td>@transactionn.mode</td>
+                                    <td>@transactionn.date</td>
+                                    <td>@transactionn.amount</td>
+
+                                </tr>
+                            }
+                            </tbody>
+                        </table>
+
+
+                        <div class="row">
+                            <nav>
+                                <ul class="pager">
+                                    <span class="">
+                                    @if(transcations.hasPrev) {
+                                        <li class="previous"><a href="@routes.Transactionns.list(transcations.getPageIndex - 1)"><span aria-hidden="true">&larr;</span>
+                                            Older</a></li>
+                                    } else {
+                                        <li class="previous disabled"><a ><span aria-hidden="true">&larr;</span>
+                                            Older</a></li>                                        }
+                                    </span>
+
+                                    <li> @transcations.getDisplayXtoYofZ(" to ", " of ")</li>
+
+                                    <span class="">
+
+                                    @if(transcations.hasNext) {
+                                        <li class="next"><a href="@routes.Transactionns.list(transcations.getPageIndex + 1)">
+                                            Newer <span aria-hidden="true">&rarr;</span></a></li>
+                                    } else {
+                                        <li class="next disabled"><a>
+                                            Newer <span aria-hidden="true">&rarr;</span></a></li> }
+                                    </span>
+
+                                </ul>
+                            </nav>
+                        </div>
+
+                    </div>
+                }
+                </div>
+            </div>
+        </div>
+    </div>
+}
